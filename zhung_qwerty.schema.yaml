@@ -1,0 +1,129 @@
+# Rime schema
+# vim: set sw=2 sts=2 et:
+# encoding: utf-8
+
+schema:
+  schema_id: zhung_qwerty
+  name: 中州注音法（QWERTY）
+  version: "0.1"
+  author:
+    - 佛振 <chen.sst@gmail.com>
+  description: |
+    老派鄭州話
+    以注音符號錄入！
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: simplification
+    states: [ 漢字, 汉字 ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - echo_translator
+    - punct_translator
+    - r10n_translator
+  filters:
+    - simplifier
+    - uniquifier
+
+speller:
+  alphabet: 'zyxwvutsrqponmlkjihgfedcba,.'
+  initials: 'zyxwvutsrqponmlkjihgfedcba'
+  delimiter: " '"
+  algebra:
+    - xform/^yi?/i/
+    - xform/^wu?/u/
+    - xform/^([jqx])([^i])/$1i$2/
+    - xform/ui/uei/
+    - xform/([iu])n/$1en/
+    - xform/^zhy?/Z/
+    - xform/^chy?/C/
+    - xform/^shy?/S/
+    - xform/^rhy?/R/
+    - xform/^([zcs])y/$1/
+    - xform/iu/Y/
+    - xform/eo/O/
+    - xform/ai/I/
+    - xform/ei/E/
+    - xform/au/A/
+    - xform/ou/U/
+    - xform/ang/K/
+    - xform/eng/G/
+    - xform/an/M/
+    - xform/en/N/
+    - xform/el/L/
+    - xform/([aoAU])l/$1L/
+    - derive/^(u\d?)$/v$1/
+    - derive/^u([aAMNK])/v$1/
+    #- abbrev/^([bpmfvdtnlgkhjqxZCSRzcs]).+$/$1/
+    - derive/^([A-Za-z]+)\d$/$1/
+    - 'xlit|jqxZCSRYOIEAUMNKGL1234|gkhjqxrywdtkpvfbglnm,.|'
+
+translator:
+  dictionary: zhung
+  prism: zhung_qwerty
+  preedit_format:
+    - 'xlit|bpmfvdtnlgkhjqxrzcsiuyaowe,.|ㄅㄆㄇㄈㄪㄉㄊㄋㄌㄍㄎㄏㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝˊˋ|'
+    - "xform/([^ ']+)ㄇ/$1ˉ/"
+    - "xform/([^ ']+)ㄋ/$1ˆ/"
+    - "xform/ㄅ($|[ ']|ˉ|ˆ|ˊ|ˋ)/ㄤ$1/"
+    - "xform/ㄍ($|[ ']|ˉ|ˆ|ˊ|ˋ)/ㄥ$1/"
+    - "xform/ㄪ($|[ ']|ˉ|ˆ|ˊ|ˋ)/ㄢ$1/"
+    - "xform/ㄈ($|[ ']|ˉ|ˆ|ˊ|ˋ)/ㄣ$1/"
+    - "xform/ㄎ($|[ ']|ˉ|ˆ|ˊ|ˋ)/ㄠ$1/"
+    - "xform/ㄆ($|[ ']|ˉ|ˆ|ˊ|ˋ)/ㄡ$1/"
+    - "xform/ㄉ($|[ ']|ˉ|ˆ|ˊ|ˋ)/ㄞ$1/"
+    - "xform/ㄊ($|[ ']|ˉ|ˆ|ˊ|ˋ)/ㄟ$1/"
+    - "xform/ㄌ($|[ ']|ˉ|ˆ|ˊ|ˋ)/ㄦ$1/"
+    - 'xform/ㄍ(ㄧ|ㄩ)/ㄐ$1/'
+    - 'xform/ㄎ(ㄧ|ㄩ)/ㄑ$1/'
+    - 'xform/ㄏ(ㄧ|ㄩ)/ㄒ$1/'
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  bindings:
+    # Emacs style
+    - { when: composing, accept: Control+p, send: Up }
+    - { when: composing, accept: Control+n, send: Down }
+    - { when: composing, accept: Control+b, send: Left }
+    - { when: composing, accept: Control+f, send: Right }
+    - { when: composing, accept: Control+a, send: Home }
+    - { when: composing, accept: Control+e, send: End }
+    - { when: composing, accept: Control+d, send: Delete }
+    - { when: composing, accept: Control+g, send: Escape }
+    - { when: composing, accept: Alt+v, send: Page_Up }
+    - { when: composing, accept: Control+v, send: Page_Down }
+    # commonly used paging keys
+    - { when: composing, accept: ISO_Left_Tab, send: Page_Up }
+    - { when: composing, accept: Shift+Tab, send: Page_Up }
+    - { when: composing, accept: Tab, send: Page_Down }
+    - { when: paging, accept: minus, send: Page_Up }
+    - { when: has_menu, accept: equal, send: Page_Down }
+    - { when: paging, accept: apostrophe, send: Page_Up }
+    - { when: has_menu, accept: semicolon, send: Page_Down }
+
+recognizer:
+  import_preset: default
+  patterns:
+    url: "^(www[.]|https?:|ftp:|mailto:).*$"
