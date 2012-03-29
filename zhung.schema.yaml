@@ -5,7 +5,7 @@
 schema:
   schema_id: zhung
   name: 中州羅馬字
-  version: "0.1"
+  version: "0.2"
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
@@ -67,6 +67,7 @@ speller:
 
 translator:
   dictionary: zhung
+  spelling_hints: 4
   preedit_format:
     - 'xform ([aeiou])(l|ng?)([:;<,/\\]) $1$3$2'
     - 'xform ([aeo])([iu])([:;<,/\\]) $1$3$2'
@@ -98,14 +99,7 @@ translator:
     - 'xform w[<,] ŵ'
     - 'xform w/ ẃ'
     - 'xform w\\ ẁ'
-
-reverse_lookup:
-  dictionary: cangjie5
-  prefix: "`"
-  tips: 〔倉頡〕
-  preedit_format:
-    - "xlit|abcdefghijklmnopqrstuvwxyz|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|"
-  comment_format:
+  comment_format: &COMMENT_FORMAT
     - xform ([aeiou])(l|ng?)([1234]) $1$3$2
     - xform ([aeo])([iu])([1234]) $1$3$2
     - xform a1 ä
@@ -136,6 +130,14 @@ reverse_lookup:
     - xform w2 ŵ
     - xform w3 ẃ
     - xform w4 ẁ
+
+reverse_lookup:
+  dictionary: cangjie5
+  prefix: "`"
+  tips: 〔倉頡〕
+  preedit_format:
+    - "xlit|abcdefghijklmnopqrstuvwxyz|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|"
+  comment_format: *COMMENT_FORMAT
 
 punctuator:
   import_preset: default

@@ -5806,6 +5806,7 @@ use_preset_vocabulary: true
 硈	qa1
 矬	cuo2
 踐	ziuan4
+踐	zian4
 鷇	kou4
 渥	yuo1
 搓	cuo1
@@ -5952,7 +5953,8 @@ use_preset_vocabulary: true
 芍	ciuo1
 芍	zhuo1
 芍	shuo2
-羨	yi2
+羨	yi2	0%
+羨	sian4
 蟭	ziau1
 鬮	jou1
 鬮	jou3
@@ -11843,7 +11845,7 @@ use_preset_vocabulary: true
 蚜	ya2
 汫	zing4
 羡	sian4
-羡	yan4
+羡	yan4	0%
 頏	hang2
 頏	kang4
 虺	huai1
