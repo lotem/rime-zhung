@@ -12,7 +12,7 @@
 
 ---
 name: zhung
-version: "0.2"
+version: "0.3"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -31,7 +31,7 @@ use_preset_vocabulary: true
 不應	bu1 ying4
 不要	bau2
 不要	bu1 yau4
-總ㄛ	zo3
+ㄗㄛ	zo3
 ㄍㄝ	ge3
 ㄍㄝ	ge2
 ㄖㄛㄦ	rhol2
@@ -222,7 +222,7 @@ use_preset_vocabulary: true
 麵兒	mial4
 面兒	miel1
 一日	yel1
-一日	y1 rhy1
+一日	yi1 rhy1
 昨日	zual2
 昨日	zuo2 rhy1
 今日	jiel1
@@ -3945,7 +3945,7 @@ use_preset_vocabulary: true
 蔇	ji4
 遴	lin4
 唄	bai4
-碑	bi1
+碑	bei1
 耤	zi2
 蹤	ziung1
 棕	zung1

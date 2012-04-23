@@ -5,7 +5,7 @@
 schema:
   schema_id: zhung
   name: 中州羅馬字
-  version: "0.2"
+  version: "0.3"
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
@@ -67,7 +67,7 @@ speller:
 
 translator:
   dictionary: zhung
-  spelling_hints: 4
+  #spelling_hints: 4
   preedit_format:
     - 'xform ([aeiou])(l|ng?)([:;<,/\\]) $1$3$2'
     - 'xform ([aeo])([iu])([:;<,/\\]) $1$3$2'
@@ -133,6 +133,7 @@ translator:
 
 reverse_lookup:
   dictionary: cangjie5
+  enable_completion: true
   prefix: "`"
   tips: 〔倉頡〕
   preedit_format:
