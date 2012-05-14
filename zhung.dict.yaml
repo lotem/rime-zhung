@@ -12,7 +12,7 @@
 
 ---
 name: zhung
-version: "0.3"
+version: "0.3.20120513"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -199,6 +199,14 @@ use_preset_vocabulary: true
 色兒	shal1
 彎兒	wal1
 窩兒	wal1
+塊兒	kual4
+團兒	tual2
+園兒	yual2
+院兒	yual4
+卷兒	jual3
+劵兒	jual4
+劵兒	qual4
+圈兒	qual1
 角兒	jual1
 菜角兒	cai4 jual1
 牆角兒	ciang2 jual1
@@ -4296,7 +4304,7 @@ use_preset_vocabulary: true
 倚	yi3
 倚	yi4
 厥	jue1
-厥	ju1
+厥	ju1	0%
 蒺	zi2
 懶	lan3
 濂	lian2
@@ -17817,6 +17825,7 @@ use_preset_vocabulary: true
 夘	zi3
 没	muo1
 劵	quan4
+劵	juan4
 薻	zau3
 秃	tu1
 祘	suan4
@@ -17949,7 +17958,7 @@ use_preset_vocabulary: true
 働	dung4
 僱	gu4
 僳	su4
-儘	jin3
+儘	zin3
 儤	bau4
 兎	tu4
 児	el2
