@@ -12,7 +12,7 @@
 
 ---
 name: zhung
-version: "0.3.20120513"
+version: "0.3.20120525"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -5583,7 +5583,8 @@ use_preset_vocabulary: true
 桔	je1
 舫	bang4
 舫	fang4
-恢	kui1
+恢	hui1
+恢	kui1	0%
 廝	sy1
 謨	mu2
 鍰	huan2
