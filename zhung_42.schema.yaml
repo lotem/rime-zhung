@@ -5,7 +5,7 @@
 schema:
   schema_id: zhung_42
   name: 中州注音法（四十二鍵）
-  version: "0.1"
+  version: "0.2"
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
@@ -46,7 +46,7 @@ engine:
     - uniquifier
 
 menu:
-  alternative_select_keys: "ABCDE"
+  alternative_select_keys: "ABCDEFGHIJ"
 
 speller:
   alphabet: '1qaz`2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/-7634'
