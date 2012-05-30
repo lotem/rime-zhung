@@ -12,7 +12,7 @@
 
 ---
 name: zhung
-version: "0.3.20120525"
+version: "0.3.20120530"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -522,7 +522,7 @@ use_preset_vocabulary: true
 書	shu1
 輸	shu1
 輸	rhu1
-很	hen4
+很	hen3
 八	ba1
 調	tiau2
 調	diau4
