@@ -5,7 +5,7 @@
 schema:
   schema_id: zhung_28
   name: 中州注音法（二十八鍵）
-  version: "0.1"
+  version: "0.2"
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
@@ -38,7 +38,6 @@ engine:
     - punct_segmentor
     - fallback_segmentor
   translators:
-    - echo_translator
     - punct_translator
     - r10n_translator
   filters:
