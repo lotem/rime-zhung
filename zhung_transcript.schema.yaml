@@ -30,7 +30,7 @@ engine:
     - punctuator
     - selector
     - navigator
-    - express_editor
+    - fluency_editor
   segmentors:
     - ascii_segmentor
     - matcher
