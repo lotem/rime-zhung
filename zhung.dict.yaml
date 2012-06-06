@@ -12,7 +12,7 @@
 
 ---
 name: zhung
-version: "0.3.20120531"
+version: "0.3.20120606"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -7337,7 +7337,8 @@ use_preset_vocabulary: true
 鷵	tu2
 饜	yan1
 饜	yan4
-鞏	jung3
+鞏	jung3	0%
+鞏	gung3
 桱	jing4
 篷	peng2
 琩	chang1
