@@ -12,7 +12,7 @@
 
 ---
 name: zhung
-version: "0.3.20120530"
+version: "0.3.20120531"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -142,6 +142,9 @@ use_preset_vocabulary: true
 繩兒	shoul2
 明兒	mioul2
 名兒	mioul2
+丁兒	dioul1
+頂兒	dioul3
+ㄊㄧㄡㄦ	tioul1
 星兒	sioul1
 瓶兒	pioul2
 油兒	youl2
@@ -159,6 +162,8 @@ use_preset_vocabulary: true
 姪兒	zhel2
 陣兒	zhel4
 池兒	chel2
+齒兒	chel3
+糝兒	shel1
 食兒	shel2
 事兒	shel4
 詞兒	cel2
@@ -193,6 +198,8 @@ use_preset_vocabulary: true
 這兒	zhal4
 那兒	nal4
 哪兒	nal3
+尖兒	zial1
+錢兒	cial2
 些兒	sial3
 線兒	sial4
 旋兒	siual2
@@ -211,6 +218,9 @@ use_preset_vocabulary: true
 菜角兒	cai4 jual1
 牆角兒	ciang2 jual1
 眼兒	yal3
+件兒	jal4
+毽兒	jal4
+卡兒	qal3
 餡兒	xal4
 帶兒	dal4
 袋兒	dal4
@@ -1163,7 +1173,7 @@ use_preset_vocabulary: true
 臺	tai2
 速	su1
 雲	yun2
-打	ding3
+打	ding3	0%
 打	da3
 貶	bian3
 證	zheng4
@@ -13367,7 +13377,8 @@ use_preset_vocabulary: true
 瞫	dan4
 瞫	shen3
 弰	shau1
-糝	san3
+糝	san3	0%
+糝	shen1
 腤	an1
 頀	hu4
 傛	yung2
