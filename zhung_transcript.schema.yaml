@@ -5,7 +5,7 @@
 schema:
   schema_id: zhung_transcript
   name: 中州注音法（轉寫）
-  version: "0.2"
+  version: "0.3"
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
@@ -75,9 +75,8 @@ translator:
   preedit_format:
     - "xform/(^|[ '])yi?/$1i/"
     - "xform/(^|[ '])wu?/$1u/"
-    - xform/([zcs]h?)y/$1/
-    - xform/([zcs])h/\U$1/
-    - xform/rh?/R/
+    - xform/([zcsr]h?)y/$1/
+    - xform/([zcsr])h/\U$1/
     - xform/iu/Y/
     - xform/([jqx])u/$1Y/
     - xform/el/W/
