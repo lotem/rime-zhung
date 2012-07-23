@@ -12,7 +12,7 @@
 
 ---
 name: zhung
-version: "0.3.20120606"
+version: "0.3.20120723"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -33,7 +33,6 @@ use_preset_vocabulary: true
 不要	bu1 yau4
 ㄗㄛ	zo3
 ㄍㄝ	ge3
-ㄍㄝ	ge2
 ㄖㄛㄦ	rhol2
 只當	zang2
 只當	zy3 dang4
@@ -96,30 +95,30 @@ use_preset_vocabulary: true
 
 # 子變韻
 
-下子	xau4
-一下子	yi1 xau4
-茄子	qau2
-瘸子	quau2
-架子	jau4
-筷子	quau4
-勺子	shuau2
-桌子	zhuau1
-椅子	you3
-櫃子	juou4
-輩子	biou4
-痱子	fiou4
-雞子	jou1
-娃子	wau2
-襪子	wau1
-布袋子	bu4 diau4
-鼻子	biou2
-柿子	shou4
-李子	liou3
-渣子	zhau1
-茬子	chau2
-孩子	xau2
-妮子	niou1
-媳子	siou2
+下ㄠ	xau4
+一下ㄠ	yi1 xau4
+茄ㄠ	qau2
+瘸ㄠ	quau2
+架ㄠ	jau4
+筷ㄠ	quau4
+勺ㄠ	shuau2
+桌ㄠ	zhuau1
+椅ㄡ	you3
+櫃ㄡ	juou4
+輩ㄡ	biou4
+痱ㄡ	fiou4
+雞ㄡ	jou1
+娃ㄠ	wau2
+襪ㄠ	wau1
+布袋ㄠ	bu4 diau4
+鼻ㄡ	biou2
+柿ㄡ	shou4
+李ㄡ	liou3
+渣ㄠ	zhau1
+茬ㄠ	chau2
+孩ㄠ	xau2
+妮ㄡ	niou1
+媳ㄡ	siou2
 
 # 動詞變韻
 
@@ -127,6 +126,7 @@ use_preset_vocabulary: true
 蓋ㄝ	ge4
 跪ㄝ	gue4
 站ㄝ	zhe4
+伸ㄝ	che1
 睡ㄝ	she4
 穿ㄝ	chue1
 算ㄝ	sue4
@@ -3440,7 +3440,7 @@ use_preset_vocabulary: true
 儂	nung2
 吊	diau4
 聝	gue1
-龔	jung1
+龔	gung1
 危	wui2
 葷	xun1
 禱	dau3
@@ -3700,7 +3700,7 @@ use_preset_vocabulary: true
 衍	yan3
 衍	yan4
 辯	bian4
-拱	jung3
+拱	gung3
 祺	qi2
 黏	nian2
 窮	qung2
@@ -7307,7 +7307,7 @@ use_preset_vocabulary: true
 犍	jan1
 犍	qan2
 魠	tuo1
-躬	jung1
+躬	gung1
 踾	pi1
 踾	bi2
 踾	fu1
@@ -7337,7 +7337,6 @@ use_preset_vocabulary: true
 鷵	tu2
 饜	yan1
 饜	yan4
-鞏	jung3	0%
 鞏	gung3
 桱	jing4
 篷	peng2
@@ -9321,7 +9320,8 @@ use_preset_vocabulary: true
 蓼	liau3
 蓼	liu1
 糙	cau4
-滎	xung2
+滎	xing2
+滎	ying2	0%
 韇	du2
 溟	ming2
 溟	ming3
@@ -15675,7 +15675,7 @@ use_preset_vocabulary: true
 塐	su4
 浞	zhuo2
 祦	wu2
-巩	jung3
+巩	gung3
 坺	fa2
 坺	buo2
 嘏	ja3
