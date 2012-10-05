@@ -12,7 +12,7 @@
 
 ---
 name: zhung
-version: "0.3.20120723"
+version: "0.3.20121006"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -3088,7 +3088,8 @@ use_preset_vocabulary: true
 秉	bing3
 僧	seng1
 循	siun2
-捐	yuan2
+捐	yuan2	0%
+捐	juan1
 鈕	niou3
 薦	zian4
 玻	buo1
@@ -5680,7 +5681,8 @@ use_preset_vocabulary: true
 騵	yuan2
 晞	xi1
 曠	kuang4
-潰	hui4
+潰	hui4	0%
+潰	kui4
 伺	sy1
 伺	sy4
 諞	pian2
