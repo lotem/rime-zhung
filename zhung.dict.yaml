@@ -12,7 +12,7 @@
 
 ---
 name: zhung
-version: "0.3.20121006"
+version: "0.3.20121021"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -25,7 +25,6 @@ use_preset_vocabulary: true
 有遭兒	yi1 zol1
 一遭兒	yi1 zol1
 一晌兒	yi1 shol3
-年時年
 多早晚	duo1 zo3 wal3
 不應	bing2
 不應	bu1 ying4
@@ -235,7 +234,11 @@ use_preset_vocabulary: true
 蝶兒	dial2
 點兒	dial3
 墊兒	dial4
+店兒	dial4
 天兒	tial1
+簾兒	lial2
+鍊兒	lial4
+鏈兒	lial4
 邊兒	bial1
 麵兒	mial4
 面兒	miel1
@@ -4033,6 +4036,7 @@ use_preset_vocabulary: true
 焉	yan2	0%
 饑	ji1
 蘋	pin2
+蘋	ping2
 釆	ban4
 塚	zhung3
 璃	li2
