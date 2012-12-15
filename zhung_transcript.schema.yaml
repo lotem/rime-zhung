@@ -1,11 +1,10 @@
 # Rime schema
-# vim: set sw=2 sts=2 et:
 # encoding: utf-8
 
 schema:
   schema_id: zhung_transcript
   name: 中州注音法（轉寫）
-  version: "0.3"
+  version: "0.4"
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
@@ -94,7 +93,7 @@ translator:
     - xform/en/N/
     - xform/([iuY])n/$1N/
     - 'xlit|:;,|--<|'
-    - 'xlit|bpmfvdtnlgkhjqxZCSRzcsiuYWaoOeIEAUMNKG-</\|ㄅㄆㄇㄈㄪㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄦㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥˉˆˊˋ|'
+    - 'xlit|bpmfvdtnlgkhjqxZCSRzcsriuYWaoOeIEAUMNKG-</\|ㄅㄆㄇㄈㄪㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄖㄧㄨㄩㄦㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥˉˆˊˋ|'
 
 punctuator:
   import_preset: default
