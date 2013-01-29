@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "0.3.20121021"
+version: "2013.01.29"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -4437,8 +4437,9 @@ use_preset_vocabulary: true
 麾	hui1
 驟	zhou4
 磐	pan2
-披	pi1
-披	pi3
+披	pei1	100%
+披	pi1	1%
+披	pi3	0%
 皿	ming3
 逝	shy4
 佸	guo1
