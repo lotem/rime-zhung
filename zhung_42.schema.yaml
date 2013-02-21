@@ -4,7 +4,7 @@
 schema:
   schema_id: zhung_42
   name: 中州注音法（四十二鍵）
-  version: "0.2"
+  version: "0.3"
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
@@ -47,8 +47,11 @@ menu:
   alternative_select_keys: "ABCDEFGHIJ"
 
 speller:
-  alphabet: '1qaz`2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/-7634'
-  delimiter: " '"
+  alphabet: '1qaz`2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/- 6347'
+  initials: '1qaz`2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/-'
+  finals: " 6347"
+  delimiter: "'"
+  use_space: true
   algebra:
     - xform/^yi?/i/
     - xform/^wu?/u/
@@ -77,13 +80,14 @@ speller:
     - abbrev/^([bpmfvdtnlgkhjqxZCSRzcs]).+$/$1/
     - derive/^([A-Za-z]+)\d$/$1/
     - derive/^([jqx])i([A-Za-z])/$1$2/
-    - 'xlit|bpmfvdtnlgkhjqxZCSRzcsiuYaoOeIEAUMNKGL1234|1qaz`2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/-7634|'
+    - derive/[12]$/5/
+    - 'xlit|bpmfvdtnlgkhjqxZCSRzcsiuYaoOeIEAUMNKGL12345|1qaz`2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/- 6347|'
 
 translator:
   dictionary: zhung
   prism: zhung_42
   preedit_format:
-    - 'xlit|1qaz`2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/-7634|ㄅㄆㄇㄈㄪㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦˉˆˊˋ|'
+    - 'xlit|1qaz`2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/- 6347''|ㄅㄆㄇㄈㄪㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦˉˆˊˋ˙ |'
 
 punctuator:
   full_shape:
@@ -152,6 +156,7 @@ key_binder:
     - { when: composing, accept: Control+a, send: Home }
     - { when: composing, accept: Control+e, send: End }
     - { when: composing, accept: Control+d, send: Delete }
+    - { when: composing, accept: Control+k, send: Shift+Delete }
     - { when: composing, accept: Control+g, send: Escape }
     - { when: composing, accept: Alt+v, send: Page_Up }
     - { when: composing, accept: Control+v, send: Page_Down }
