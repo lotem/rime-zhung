@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2013.01.29"
+version: "2013.02.23"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -88,7 +88,7 @@ use_preset_vocabulary: true
 弄啥	nung4 sha4
 時候	shoul2
 時候	shy2 hou4
-生日	shoul2
+生日	shoul1
 生日	sheng rhy1
 
 # 子變韻
@@ -137,7 +137,9 @@ use_preset_vocabulary: true
 
 #  兒化韻
 
+聲兒	shoul1
 繩兒	shoul2
+手兒	shoul3
 明兒	mioul2
 名兒	mioul2
 丁兒	dioul1
@@ -239,7 +241,7 @@ use_preset_vocabulary: true
 鍊兒	lial4
 鏈兒	lial4
 邊兒	bial1
-麵兒	mial4
+麪兒	mial4
 面兒	miel1
 一日	yel1
 一日	yi1 rhy1
@@ -15559,6 +15561,7 @@ use_preset_vocabulary: true
 粯	xan4
 吴	wu2
 峯	feng1
+峯	feng2
 迹	zi1
 臽	kan3
 臽	xan4
