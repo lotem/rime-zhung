@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2013.02.23"
+version: "2013.06.07"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -372,7 +372,7 @@ use_preset_vocabulary: true
 式	shy1
 室	shy2
 事	shy4
-事	zhy4
+事	zhy4	0%
 陳	chen2
 主	zhu3
 華	hua1
@@ -392,7 +392,7 @@ use_preset_vocabulary: true
 至	zhy4
 此	cy3
 都	du1
-都	dou3	0%
+都	dou3
 四	sy4
 行	hang2
 行	xing2
@@ -746,7 +746,7 @@ use_preset_vocabulary: true
 膠	jau1
 單	dan1
 單	chan2	0%
-單	shan4	0%
+單	shan4	1%
 收	shou1
 視	shy4
 視	shy1
@@ -2579,6 +2579,7 @@ use_preset_vocabulary: true
 棧	shan4	0%
 棧	zhan4
 縮	chu1
+縮	shuo1
 碳	tan4
 塵	chen2
 浩	hau4
