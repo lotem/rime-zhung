@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2013.06.07"
+version: "2013.06.10"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -4935,7 +4935,8 @@ use_preset_vocabulary: true
 嫩	nun4
 蒪	puo1
 諺	yan4
-粹	sui4
+粹	cui4
+粹	sui4	0%
 匾	bian3
 偯	yi3
 緹	ti2
@@ -5758,6 +5759,7 @@ use_preset_vocabulary: true
 鄔	yu4
 肋	le1
 饋	gui4
+饋	kui4
 濮	bu1
 竺	du1
 竺	zhu1
