@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2013.06.10"
+version: "2013.06.15"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -8194,7 +8194,8 @@ use_preset_vocabulary: true
 葞	mi3
 磌	tian2
 磌	zhen1
-噁	wu4
+噁	wu4	0%
+噁	eo1
 棶	lai2
 愕	eo1
 鮫	jau1
