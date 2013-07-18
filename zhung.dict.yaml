@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2013.06.15"
+version: "2013.07.18"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -29,8 +29,8 @@ use_preset_vocabulary: true
 不應	bu1 ying4
 不要	bau2
 不要	bu1 yau4
-ㄗㄛ	zo3
-ㄍㄝ	ge3
+臵	ge2	10000
+ㄗㄛ	zo2
 ㄖㄛㄦ	rhol2
 只當	zang2
 只當	zy3 dang4
