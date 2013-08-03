@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2013.07.18"
+version: "2013.08.03"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -843,7 +843,7 @@ use_preset_vocabulary: true
 次	cy4
 糧	liang2
 梁	liang2
-液	yi1
+液	yi2
 液	ye4
 乘	cheng2
 乘	sheng4	0%
