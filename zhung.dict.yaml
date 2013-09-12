@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2013.08.03"
+version: "2013.09.12"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -6798,6 +6798,7 @@ use_preset_vocabulary: true
 竷	kan3
 竷	kan4
 帚	zhou3
+帚	zhu3
 硃	zhu1
 涌	yung3
 戩	zian3
@@ -17148,6 +17149,7 @@ use_preset_vocabulary: true
 疎	shu1
 疎	shu4
 箒	zhou3
+箒	zhu3
 栛	li4
 誜	shua4
 稧	xi4
