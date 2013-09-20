@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2013.09.12"
+version: "2013.09.20"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -174,8 +174,17 @@ use_preset_vocabulary: true
 信兒	siel4
 皮兒	piel2
 魚兒	yuel2
+墩兒	duel1
+盹兒	duel3
+對兒	duel4
+腿兒	tuel3
+兔兒	tuel4
+輪兒	luel2
 路兒	luel4
 墜兒	zhuel4
+春兒	chuel1
+垂兒	chuel2
+鎚兒	chuel2
 水兒	shuel3
 雞兒	jel1
 筋兒	jel1
@@ -227,10 +236,25 @@ use_preset_vocabulary: true
 臺兒	tal2
 籃兒	lal2
 盒兒	hal2
+班兒	bal1
+板兒	bal3
+把兒	bal4
+半兒	bal4
+辦兒	bal4
 牌兒	pal2
 盤兒	pal2
 碗兒	wal3
 鍋兒	gual1
+瓜兒	gual1
+官兒	gual1
+館兒	gual3
+罐兒	gual4
+箍兒	guel1
+滾兒	guel3
+棍兒	guel4
+捆兒	kuel3
+忽兒	huel1
+會兒	huel4
 碟兒	dial2
 蝶兒	dial2
 點兒	dial3
@@ -247,7 +271,7 @@ use_preset_vocabulary: true
 一日	yi1 rhy1
 昨日	zual2
 昨日	zuo2 rhy1
-今日	jiel1
+今日	jel1
 今日	jin1 rhy1
 明日	miel2
 明日	ming2 rhy1
@@ -6657,7 +6681,8 @@ use_preset_vocabulary: true
 磔	zhe1
 遽	ju4
 蝓	yu2
-盹	zhun4
+盹	zhun4	0%
+盹	dun3
 閑	xan2
 篞	nie1
 倳	zhy4
