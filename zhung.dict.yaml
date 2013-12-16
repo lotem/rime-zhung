@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2013.11.27"
+version: "2013.12.16"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -2884,7 +2884,8 @@ use_preset_vocabulary: true
 俗	siu2
 阮	yuan2
 阮	yuan3
-祕	bi4
+祕	bi4	0%
+祕	mi4
 茹	rhu2
 茹	rhu3	0%
 茹	rhu4	0%
