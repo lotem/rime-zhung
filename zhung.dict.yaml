@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2013.12.16"
+version: "2013.12.25"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -18009,7 +18009,7 @@ use_preset_vocabulary: true
 偫	zhy4
 偱	xun2
 偸	tou1
-偺	zan2
+偺	zan3
 傈	li4
 傚	xau4
 傢	ja1
@@ -18087,7 +18087,7 @@ use_preset_vocabulary: true
 咚	dung1
 咣	guang1
 咱	za2	5%
-咱	zan2	95%
+咱	zan3	95%
 咲	xau4
 咾	lau3
 哋	di4
@@ -18113,7 +18113,7 @@ use_preset_vocabulary: true
 啷	lang1
 啽	an2
 喂	wui4
-喒	zan2
+喒	zan3
 喨	liang4
 喩	yu4
 喱	li2
