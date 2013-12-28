@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2013.12.25"
+version: "2013.12.28"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -4405,7 +4405,8 @@ use_preset_vocabulary: true
 征	zheng1
 兜	dou1
 勛	xun1
-惑	hue2
+惑	huai2
+惑	hue2	0%
 佫	heo2
 蕈	zin4
 冶	ye3
@@ -12137,7 +12138,6 @@ use_preset_vocabulary: true
 琈	fu2
 澥	xa4
 猲	xe1
-?	猲
 猲	heo1
 蘪	mi2
 焲	yi1
@@ -12504,7 +12504,6 @@ use_preset_vocabulary: true
 虥	chan2
 虥	shan4
 虥	zhan4
-?	虥
 鱴	mie1
 匚	fang1
 摋	sa1
@@ -14236,7 +14235,6 @@ use_preset_vocabulary: true
 謣	yu2
 瞺	wui4
 嬽	yuan1
-?	嬽
 惁	si1
 垤	die2
 鏌	muo1
@@ -14702,7 +14700,6 @@ use_preset_vocabulary: true
 孥	nu2
 孥	nu3
 讘	rheo1
-?	臡
 臡	ni2
 臡	nuo2
 蠦	lu2
@@ -14969,7 +14966,6 @@ use_preset_vocabulary: true
 欇	sheo2
 眏	ang1
 殜	ye1
-?	殜
 殜	zheo2
 瞤	rhun2
 綨	qi2
@@ -15470,7 +15466,7 @@ use_preset_vocabulary: true
 唂	gu1
 弆	ju3
 弆	qu3
-?	箉
+#箉
 夊	chuai1
 夊	sui1
 螡	wun2
@@ -16821,7 +16817,7 @@ use_preset_vocabulary: true
 彠	hue2
 彠	yu1
 奤	puo1
-?	遪
+#遪
 畼	chang4
 醔	chou1
 訙	sin4
