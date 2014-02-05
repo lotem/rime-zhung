@@ -1378,8 +1378,11 @@ use_preset_vocabulary: true
 順	shun4
 陛	bi4
 惟	wui2
+惟	vi2
 唯	wui2
+唯	vi2
 唯	wui3
+唯	vi3
 圍	wui2
 身	shen1
 撥	buo1
@@ -1457,6 +1460,7 @@ use_preset_vocabulary: true
 協	xe2
 松	siung1
 維	wui3
+維	vi3
 酷	ku1
 牧	mu1
 往	wang3
@@ -5627,6 +5631,7 @@ use_preset_vocabulary: true
 麮	qu3
 麮	qu4
 帷	wui2
+帷	vi2
 袍	pau2
 剆	luo3
 拂	fu1
@@ -8968,6 +8973,7 @@ use_preset_vocabulary: true
 餾	liou2
 餾	liou4
 濰	wui2
+濰	vi2
 篸	zan1
 篸	zan4
 傀	gui1
@@ -11554,6 +11560,7 @@ use_preset_vocabulary: true
 孅	sian1
 蜼	lui3
 蜼	wui4
+蜼	vi4
 蜼	you4
 驃	biau4
 莁	wu2
@@ -11660,7 +11667,9 @@ use_preset_vocabulary: true
 秜	li2
 攡	li2
 蓶	wui2
+蓶	vi2
 蓶	wui3
+蓶	vi3
 瞀	muo1
 瞀	mu4
 趹	jue1
@@ -12953,6 +12962,7 @@ use_preset_vocabulary: true
 淓	fang1
 踓	cui3
 踓	wui3
+踓	vi3
 綆	geng3
 溒	yuan2
 掎	ji1
@@ -17826,6 +17836,7 @@ use_preset_vocabulary: true
 宖	wung1
 宖	hung2
 琟	wui2
+琟	vi2
 餭	huang2
 尯	kui4
 嘳	kuai4
