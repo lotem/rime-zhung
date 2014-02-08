@@ -166,6 +166,7 @@ translator:
     - xform/en/N/
     - xform/([iuY])n/$1N/
     - "xlit|bpmfvdtnlgkhjqxZCSRzcsiuYWaoOeIEAUMNKG|ㄅㄆㄇㄈㄪㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄦㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥ|"
+    - "xlit|'| |"
 
 punctuator:
   import_preset: default
