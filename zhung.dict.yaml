@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2014.02.06"
+version: "2014.02.08"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -6488,8 +6488,9 @@ use_preset_vocabulary: true
 剋	ke1
 鵑	juan1
 儩	sy4
-唬	xa4
-唬	gue1
+唬	hu3
+唬	xa4	0%
+唬	gue1	0%
 墮	hui1
 墮	duo4
 墮	tuo3
