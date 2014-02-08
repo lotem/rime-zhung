@@ -4,7 +4,7 @@
 schema:
   schema_id: zhung_combo
   name: 中州羅馬字（並擊）
-  version: "0.1"
+  version: "0.2"
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
