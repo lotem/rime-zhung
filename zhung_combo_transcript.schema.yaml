@@ -146,7 +146,7 @@ translator:
   preedit_format:
     - "xform/(^|[ '])yi?/$1i/"
     - "xform/(^|[ '])wu?/$1u/"
-    - xform/([zcs]h?)y/$1/
+    - xform/([zcsr]h?)y/$1/
     - xform/([zcs])h/\U$1/
     - xform/rh?/R/
     - xform/iu/Y/
