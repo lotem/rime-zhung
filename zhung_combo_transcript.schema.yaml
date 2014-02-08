@@ -115,7 +115,15 @@ chord_composer:
     - xform/^([gkh])$/$1eo/
     - xform/^([zcsr]h?)$/$1y/
   output_format:
-    - "xform/^([a-z]+)$/$1'/"
+    - "xform/^([bpmfv])([iu]|[ae]|uo|[ae]i|i?[ao]u|[ei]n|i?an|ang|[ei]ng)$/$1$2'/"
+    - "xform/^([dtnl])(i|i?u|i?a|i?e|[eu]o|iu[eo]|[aeu]i|i?[ao]u|i?u?an|[ei]n|i?un|i?ang|[ei]ng|i?ung)$/$1$2'/"
+    - "xform/^([gkh])(u|u?[ae]|[eu]o|u?ai|[eu]i|[ao]u|u?an|[eu]n|u?ang|[eu]ng)$/$1$2'/"
+    - "xform/^([jqxzcs]i)(u?[aeo]?|ai|[ao]u|u?an|u?n|[au]?ng)$/$1$2'/"
+    - "xform/^([zcsr]h?)([yu]|u?[ae]|[eu]o|u?ai|[eu]i|[ao]u|u?an|[eu]n|u?ang|[eu]ng)$/$1$2'/"
+    - "xform/^(y?)([aeo]|[ae]i|[ao]u|[aeiu]ng?)$/$1$2'/"
+    - "xform/^(yu|w)([aeo]|[au]i|[au]ng?)$/$1$2'/"
+    - "xform/^(eo|el|yi|wu|yu)$/$1'/"
+    - "erase/^([A-Za-z]+)$/"
   prompt_format:
     - "xform/(^|[ '])yi?/$1i/"
     - "xform/(^|[ '])wu?/$1u/"
