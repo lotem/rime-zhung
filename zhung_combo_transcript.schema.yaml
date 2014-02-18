@@ -4,7 +4,7 @@
 schema:
   schema_id: zhung_combo_transcript
   name: 中州注音法（並擊）
-  version: "0.3"
+  version: "0.4"
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
@@ -115,8 +115,8 @@ chord_composer:
     - xform/^([gkh])$/$1eo/
     - xform/^([zcsr]h?)$/$1y/
   output_format:
-    - "xform/^([bpmfv])([iu]|[ae]|uo|[ae]i|i?[ao]u|[ei]n|i?an|ang|[ei]ng)$/$1$2'/"
-    - "xform/^([dtnl])(i|i?u|i?a|i?e|[eu]o|iu[eo]|[aeu]i|i?[ao]u|i?u?an|[ei]n|i?un|i?ang|[ei]ng|i?ung)$/$1$2'/"
+    - "xform/^([bpmfv])([iu]|i?[ae]|uo|[ae]i|i?[ao]u|[ei]n|i?an|ang|[ei]ng)$/$1$2'/"
+    - "xform/^([dtnl])(i|i?u|i?[ae]|[eu]o|iu[eo]|[aeu]i|i?[ao]u|i?u?an|[ei]n|i?un|i?ang|[ei]ng|i?ung)$/$1$2'/"
     - "xform/^([gkh])(u|u?[ae]|[eu]o|u?ai|[eu]i|[ao]u|u?an|[eu]n|u?ang|[eu]ng)$/$1$2'/"
     - "xform/^([jqxzcs]i)(u?[aeo]?|ai|[ao]u|u?an|u?n|[au]?ng)$/$1$2'/"
     - "xform/^([zcsr]h?)([yu]|u?[ae]|[eu]o|u?ai|[eu]i|[ao]u|u?an|[eu]n|u?ang|[eu]ng)$/$1$2'/"
