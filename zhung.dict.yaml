@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2014.07.15"
+version: "2014.07.23"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -4229,7 +4229,7 @@ use_preset_vocabulary: true
 鉀	geo1
 霾	mai2
 喀	ke1
-棍	hun4
+棍	gun4
 籤	cian1
 畯	ziun4
 綁	bang3
