@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2014.05.01"
+version: "2014.07.23"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -4230,7 +4230,7 @@ use_preset_vocabulary: true
 鉀	geo1
 霾	mai2
 喀	ke1
-棍	hun4
+棍	gun4
 籤	cian1
 畯	ziun4
 綁	bang3
@@ -4709,7 +4709,7 @@ use_preset_vocabulary: true
 巾	jin1
 苭	yau3
 譫	da2
-?	譫
+譫
 漪	yi1
 懼	ju4
 圭	gui1
@@ -4969,6 +4969,7 @@ use_preset_vocabulary: true
 馥	bi2
 馥	fu2
 嫩	nun4
+嫩	lun4
 蒪	puo1
 諺	yan4
 粹	cui4
@@ -8578,7 +8579,7 @@ use_preset_vocabulary: true
 糯	nuo4
 窀	zhun1
 窀	tun2
-?	窀
+窀
 繖	san3
 繖	san4
 褆	ti2
@@ -9528,7 +9529,7 @@ use_preset_vocabulary: true
 撏	can2
 撏	chan2
 撏	sin2
-?	墬
+墬
 杼	shu4
 杼	zhu4
 颮	pau2
@@ -11287,7 +11288,7 @@ use_preset_vocabulary: true
 埢	juan3
 翐	zhy2
 篌	hou2
-?	栘
+栘
 栘	yi2
 旛	fan1
 旛	fan2
@@ -12090,7 +12091,7 @@ use_preset_vocabulary: true
 幠	hu1
 郿	mi2
 郿	mi4
-?	佁
+佁
 佁	yi3
 佁	chy4
 賨	cung2
@@ -12127,7 +12128,7 @@ use_preset_vocabulary: true
 鈏	yin3
 鈏	yin4
 羒	fen2
-?	鄹
+鄹
 鄹	zhou1
 鄹	ziu4
 魾	pi1
@@ -16364,7 +16365,7 @@ use_preset_vocabulary: true
 伹	ciu1
 姂	fan4
 姂	fa2
-?	姂
+姂
 嗊	hung3
 譡	dang4
 赥	xi1
@@ -16694,7 +16695,7 @@ use_preset_vocabulary: true
 椁	guo1
 笍	rhui4
 笍	zhui4
-?	茝
+茝
 茝	zhy3
 尣	wang1
 佅	mai4
@@ -16702,7 +16703,7 @@ use_preset_vocabulary: true
 埪	kung1
 翺	au2
 噿	zui3
-?	疓
+疓
 圔	ya1
 讗	gue1
 讗	hui2
@@ -16972,7 +16973,7 @@ use_preset_vocabulary: true
 灙	dang3
 犃	bu4
 倄	xau2
-?	倄
+倄
 悏	qe1
 畂	liou4
 瑬	liou2
