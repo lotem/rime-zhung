@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2014.07.23"
+version: "2014.08.28"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -909,7 +909,6 @@ use_preset_vocabulary: true
 星	sing1
 份	fen4
 太	tai4
-太	te4
 面	mian4
 麵	mian4
 糞	fen4
@@ -3090,7 +3089,7 @@ use_preset_vocabulary: true
 窯	yau2
 丟	diou1
 膝	si1
-膝	qi1
+膝	ci1
 艙	cang1
 悟	wu4
 誤	wu4
@@ -6668,6 +6667,8 @@ use_preset_vocabulary: true
 鶞	chun1
 峙	zhy4
 繒	cing2
+繒	zeng1
+繒	zeng4
 曈	tung1
 曈	tung2
 曈	tung3
@@ -15292,6 +15293,7 @@ use_preset_vocabulary: true
 龡	chui1
 媣	gan1
 眦	zhai4
+眦	zy4
 焪	qung1
 焪	qung4
 葜	qa1
