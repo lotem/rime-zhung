@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2014.08.28"
+version: "2014.09.06"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -5221,6 +5221,7 @@ use_preset_vocabulary: true
 鏊	au2
 鏊	au4
 拙	zhuo1
+爹	die1
 爹	zheo1
 爹	duo4
 鷲	ziou4
