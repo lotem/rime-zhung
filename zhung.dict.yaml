@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2014.08.28"
+version: "2014.09.06"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -5221,8 +5221,9 @@ use_preset_vocabulary: true
 鏊	au2
 鏊	au4
 拙	zhuo1
-爹	zheo1
-爹	duo4
+爹	die1
+爹	zheo1	0%
+爹	duo4	0%
 鷲	ziou4
 穸	si2
 砌	ci4
@@ -6667,6 +6668,8 @@ use_preset_vocabulary: true
 鶞	chun1
 峙	zhy4
 繒	cing2
+繒	zeng1
+繒	zeng4
 曈	tung1
 曈	tung2
 曈	tung3
@@ -15291,6 +15294,7 @@ use_preset_vocabulary: true
 龡	chui1
 媣	gan1
 眦	zhai4
+眦	zy4
 焪	qung1
 焪	qung4
 葜	qa1
