@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2014.09.06"
+version: "2014.09.16"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -1946,6 +1946,7 @@ use_preset_vocabulary: true
 植	zhy1
 植	zhy4	0%
 譯	yi1
+譯	yi2
 蛂	bie2
 勤	qin2
 孝	xau4
@@ -2901,6 +2902,7 @@ use_preset_vocabulary: true
 肺	fi4
 膩	ni4
 逆	yi1
+逆	ni4
 匿	te1	0%
 匿	ni1
 吹	chui1
