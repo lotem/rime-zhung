@@ -1,5 +1,5 @@
-brise-zhung
-===========
+zhung
+=====
 
 Rime input schema for Zhongyuan Mandarin
 
