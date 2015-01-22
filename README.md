@@ -9,4 +9,4 @@ Rime input schema for Zhongyuan Mandarin
 
 碼表採用【中州羅馬字】拼寫法
 
-鍵盤佈局可選用羅馬字、注音、宮保拼音
+鍵盤佈局可選用羅馬字、注音、宮保拼音、打字速記等
