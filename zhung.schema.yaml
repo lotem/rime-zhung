@@ -38,7 +38,7 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - r10n_translator
+    - script_translator
     - reverse_lookup_translator
   filters:
     - simplifier
