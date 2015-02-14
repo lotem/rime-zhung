@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2015.02.10"
+version: "2015.02.14"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -3464,6 +3464,7 @@ use_preset_vocabulary: true
 眭	hui2
 幦	mi1
 鈉	rhui4
+鈉	na1
 牯	gu3
 躍	yau4
 躍	yuo1	0%
