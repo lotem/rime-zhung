@@ -3,7 +3,7 @@
 
 schema:
   schema_id: zhung_combo_kbcon
-  name: 中州羅馬字（並擊）·鍵盤控式
+  name: 中州羅馬字（並擊·鍵盤控式）
   version: "1.0"
   author:
     - 佛振 <chen.sst@gmail.com>
@@ -13,8 +13,8 @@ schema:
     佈局：
 
         Ln  Dt          u   I   o/eo
-    S   Cr  Z*  Gk      i*  N   ê
-    Z'  Fm  Bp  Jq  er  yu  U   ê'
+    S   Cr  Z*  Gk      i*  N   E
+    Z'  Fm  Bp  Jq  er  yu  U   E'
                 H*  A*
 
     標「*」的按鍵爲拇指、食指的基準鍵位
@@ -114,7 +114,7 @@ chord_composer:
     - xform/^fz/zh/
     # 消除多餘的 h
     - xform/([^zcs])h/\1/
-    # g,k,h 接 i/ü 時作 ji/ju, qi/qu, xi/xu
+    # g,k,h 接 i/iu 時作 ji/ju, qi/qu, xi/xu
     - xform/^g([iV])/j$1/
     - xform/^k([iV])/q$1/
     - xform/^h([iV])/x$1/
