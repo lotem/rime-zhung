@@ -139,7 +139,7 @@ chord_composer:
     - xform/([aiuV])N$/$1n/
     - xform/N$/en/
     - xform/L$/el/
-    - xform/iO$/iuo/
+    - xform/([iV])O$/iuo/
     - xform/uO$/uo/
     - xform/aO$/o/
     - xform/O$/eo/
