@@ -179,6 +179,9 @@ translator:
 
 punctuator:
   import_preset: default
+  half_shape: &punct
+    ':': [ '：', '；' ]
+  full_shape: *punct
 
 key_binder:
   import_preset: default
