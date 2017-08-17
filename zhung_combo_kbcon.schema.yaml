@@ -92,7 +92,7 @@ chord_composer:
     - 'xform/^h$/ /'
     # 以下統一表記爲 h
     - xform/Hh?/h/
-    - xform/^zfb/v/
+    - xform/^bfz/v/
     # 組合聲母
     - xform/^bh/p/
     - xform/^dh/t/
