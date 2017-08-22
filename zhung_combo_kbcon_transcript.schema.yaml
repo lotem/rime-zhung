@@ -4,7 +4,7 @@
 schema:
   schema_id: zhung_combo_kbcon_transcript
   name: 中州注音法（並擊·鍵盤控式）
-  version: "1.0"
+  version: "1.1"
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
@@ -14,7 +14,7 @@ schema:
 
         Ln  Dt          u   I   o/eo
     S   Cr  Z*  Gk      i*  N   E
-    Z'  Fm  Bp  Jq  er  yu  U   E'
+    Z'  Fm  Bp      er  yu  U   E'
                 H*  A*
 
     標「*」的按鍵爲拇指、食指的基準鍵位
@@ -25,7 +25,7 @@ schema:
     # 組合聲母
     BH = p, BF = m, DH = t, DL = n, GH = k,
     ZH = zh, CH = ch, SH = sh, ZC = r
-    Z'FB = v, JH = q
+    Z'FB = v
 
     # 組合韻母及活用（同「大衆式」），括弧內爲活用組合
     AI = ai, eoI (oI) = ei, AU = au, U (E'U) = ou,
@@ -87,7 +87,7 @@ speller:
 chord_composer:
   alphabet: "gtbfrvdecswxa;njum ki,lo."
   algebra:
-    - 'xlit|gtbfrvdecswxa;njum ki,lo.|gtjzdbclfsczHhLiuVaNIUeOE|'
+    - 'xlit|gtbfrvdecswxa;njum ki,lo.|gtpzdbclfsczHhLiuVaNIUeOE|'
     # 輸出空格，方便雙手交替上字
     - 'xform/^h$/ /'
     # 以下統一表記爲 h
