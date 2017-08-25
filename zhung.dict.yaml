@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2015.02.14"
+version: "2017.08.25"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -952,6 +952,7 @@ use_preset_vocabulary: true
 場	chang2
 場	chang3
 以	yi3
+㠯	yi3
 己	ji3
 已	yi3
 已	yi4	0%
@@ -1747,6 +1748,7 @@ use_preset_vocabulary: true
 掉	diau4
 掉	nuo1	0%
 窗	chuang1
+䆫	chuang1
 彭	peng2
 積	zi1
 積	zy4	0%
@@ -1797,6 +1799,7 @@ use_preset_vocabulary: true
 傑	je2
 濟	zi3
 濟	zi4
+㴉	zi3
 蜜	mi1
 密	mi1
 柏	be1
@@ -2655,6 +2658,7 @@ use_preset_vocabulary: true
 遂	sui4
 狼	lang2
 魂	hun2
+䰟	hun2
 莎	sha1
 莎	suo1	0%
 鈞	jun1
@@ -3818,6 +3822,7 @@ use_preset_vocabulary: true
 歇	xe1
 妖	yau1
 銜	xan2
+㘅	xan2
 鍍	tu2	0%
 鍍	du4
 柄	bing4
@@ -4458,6 +4463,7 @@ use_preset_vocabulary: true
 貢	gung4
 銗	hou2
 樞	chu1
+樞	shu1
 矩	ju3
 屢	liu4
 呃	yai4
@@ -7342,6 +7348,7 @@ use_preset_vocabulary: true
 埩	zheng1
 埩	cheng2
 姝	chu1
+姝	shu1
 蚋	rhuo1
 蝡	rhuan3
 蝡	rhun3
