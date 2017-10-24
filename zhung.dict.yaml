@@ -11,7 +11,7 @@
 
 ---
 name: zhung
-version: "2017.08.25"
+version: "2017.10.24"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -2125,6 +2125,7 @@ use_preset_vocabulary: true
 盃	bei1
 塞	sai4
 塞	se1
+噻	sai1
 輯	zi2
 習	si2
 琪	qi2
@@ -9932,6 +9933,7 @@ use_preset_vocabulary: true
 泔	gan1
 嶝	deng4
 皖	huan4
+皖	wan3
 朿	cy4
 醲	niung2
 脖	buo2
