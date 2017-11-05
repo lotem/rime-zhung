@@ -26,6 +26,7 @@ schema:
     BH = p, BF = m, DH = t, DL = n, GH = k,
     ZH = zh, CH = ch, SH = sh, ZC = r
     Z'FB = v
+    zh, ch後接i, ü 時自動轉換爲 j, q
 
     # 組合韻母及活用（同「大衆式」），括弧內爲活用組合
     AI = ai, eoI (oI) = ei, AU = au, U (E'U) = ou,
@@ -101,7 +102,8 @@ chord_composer:
     - xform/^bf/m/
     - xform/^dl/n/
     - xform/^zc/rh/
-    - xform/^jh/q/
+    - xform/^zh([iV])/j$1/
+    - xform/^ch([iV])/q$1/
     # PC 鍵盤組合聲母
     - xform/^b[zcsh]+/p/
     - xform/^d[zcsh]+/t/
