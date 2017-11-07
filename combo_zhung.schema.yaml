@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 schema:
-  schema_id: zhung_combo
+  schema_id: combo_zhung
   name: 中州羅馬字（並擊）
   version: "0.3"
   author:
@@ -129,7 +129,7 @@ chord_composer:
 
 translator:
   dictionary: zhung
-  prism: zhung_combo
+  prism: combo_zhung
 
 punctuator:
   import_preset: default

@@ -2,8 +2,8 @@
 # encoding: utf-8
 
 schema:
-  schema_id: zhung_combo_kbcon_transcript
-  name: 中州注音法（並擊·鍵盤控式）
+  schema_id: combo_zhung_kbcon
+  name: 中州羅馬字（並擊·鍵盤控式）
   version: "1.1"
   author:
     - 佛振 <chen.sst@gmail.com>
@@ -173,58 +173,11 @@ chord_composer:
     - "xform/^(eo|el|yi|wu|yu)$/$1'/"
     - "erase/^([A-Za-z]+)$/"
   prompt_format:
-    # - "xform/^(.*)$/[$1]/"
-
-    - "xform/(^|[ '])yi?/$1i/"
-    - "xform/(^|[ '])wu?/$1u/"
-    - xform/([zcsr]h?)y/$1/
-    - xform/([zcsr])h/\U$1/
-    - xform/iu/Y/
-    - xform/([jqx])u/$1Y/
-    - xform/el/W/
-    - xform/([aou])l/$1W/
-    - xform/eo/O/
-    - xform/ai/I/
-    - xform/ei/E/
-    - xform/ui/uE/
-    - xform/au/A/
-    - xform/ou/U/
-    - xform/ang/K/
-    - xform/eng/G/
-    - xform/([iuY])ng/$1G/
-    - xform/an/M/
-    - xform/en/N/
-    - xform/([iuY])n/$1N/
-    - "xlit|bpmfvdtnlgkhjqxZCSRzcsiuYWaoOeIEAUMNKG|ㄅㄆㄇㄈㄪㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄦㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥ|"
-    - "xform/^(.*)$/【$1】/"
+    - "xform/^(.*)$/[$1]/"
 
 translator:
   dictionary: zhung
-  prism: zhung_combo_kbcon
-  preedit_format:
-    - "xform/(^|[ '])yi?/$1i/"
-    - "xform/(^|[ '])wu?/$1u/"
-    - xform/([zcsr]h?)y/$1/
-    - xform/([zcs])h/\U$1/
-    - xform/rh?/R/
-    - xform/iu/Y/
-    - xform/([jqx])u/$1Y/
-    - xform/el/W/
-    - xform/([aou])l/$1W/
-    - xform/eo/O/
-    - xform/ai/I/
-    - xform/ei/E/
-    - xform/ui/uE/
-    - xform/au/A/
-    - xform/ou/U/
-    - xform/ang/K/
-    - xform/eng/G/
-    - xform/([iuY])ng/$1G/
-    - xform/an/M/
-    - xform/en/N/
-    - xform/([iuY])n/$1N/
-    - "xlit|bpmfvdtnlgkhjqxZCSRzcsiuYWaoOeIEAUMNKG|ㄅㄆㄇㄈㄪㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄦㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥ|"
-    - "xlit|'| |"
+  prism: combo_zhung_kbcon
 
 punctuator:
   import_preset: default

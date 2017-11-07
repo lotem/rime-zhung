@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 schema:
-  schema_id: zhung_combo_transcript
+  schema_id: combo_zhung_transcript
   name: 中州注音法（並擊）
   version: "0.4"
   author:
@@ -150,7 +150,7 @@ chord_composer:
 
 translator:
   dictionary: zhung
-  prism: zhung_combo_transcript
+  prism: combo_zhung_transcript
   preedit_format:
     - "xform/(^|[ '])yi?/$1i/"
     - "xform/(^|[ '])wu?/$1u/"
