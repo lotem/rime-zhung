@@ -146,7 +146,7 @@ chord_composer:
     - xform/([iV])O$/iuo/
     - xform/uO$/uo/
     # - xform/aO$/o/
-    - xform/O$/o/
+    - xform/^O$/o/
     # - xform/O$/eo/
     - xform/^e$/eo/ #僅在此情況下拼作 eo，其餘作 e
     - xform/^([zcsr]h|l)e/$1eo/ #僅在此情況下拼作 eo，其餘作 e
