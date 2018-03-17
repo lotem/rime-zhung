@@ -136,7 +136,7 @@ chord_composer:
     - xform/VUE$/VNe/
     - xform/V(a?)U$/i$1U/
     # - xform/aU$/au/
-    - xform/a[UO]$/au/ # 兼容大衆式ㄠ
+    - xform/a[UO]$/au/ # 兼容大衆式「ㄠ」
     - xform/UE?$/ou/
     - xform/([aiuV])Ne$/$1ng/
     - xform/Ne$/eng/
