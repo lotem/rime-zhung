@@ -148,7 +148,7 @@ chord_composer:
     # - xform/aO$/o/
     - xform/^O$/o/
     # - xform/O$/eo/
-    - xform/^([zcsr]h|l)?e/$1eo/ #僅在此情況下拼作「ㄜ」，其餘作「ㄝ」
+    - xform/^([zcsr]h|l)?e$/$1eo/ #僅在此情況下拼作「ㄜ」，其餘作「ㄝ」
     - xform/^aE$/e/
     - xform/^i(ng?)$/yi$1/
     - xform/^i$/yi/
