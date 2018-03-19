@@ -12,7 +12,7 @@ schema:
 
     佈局：
 
-        Ln  Dt          u   I   o
+        Ln  Dt          u   I   o/eo
     S   Cr  Z*  Gk      i*  N   E/eo
     Z'  Fm  Bp      er  yu  U   E'
                 H*  A*
@@ -28,6 +28,7 @@ schema:
     Z'FB = v
     zh, ch後接i, ü 時自動轉換爲 j, q
     E 單獨使用或與 zh，ch，sh 相拼時輸出 eo，其餘爲 e
+    o 單獨使用時輸出 o，其餘爲 eo
 
     # 組合韻母及活用（同「大衆式」），括弧內爲活用組合
     AI = ai, eoI (oI) = ei, AU = au, U (E'U) = ou,
@@ -147,8 +148,8 @@ chord_composer:
     - xform/uO$/uo/
     # - xform/aO$/o/
     - xform/^O$/o/
-    # - xform/O$/eo/
-    - xform/^([zcsr]h|l)?e$/$1eo/ #僅在此情況下拼作「ㄜ」，其餘作「ㄝ」
+    - xform/O$/eo/
+    - xform/^([zcsr]?h|l)?e$/$1eo/ #僅在此情況下拼作「ㄜ」，其餘作「ㄝ」
     - xform/^aE$/e/
     - xform/^i(ng?)$/yi$1/
     - xform/^i$/yi/
