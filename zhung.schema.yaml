@@ -4,7 +4,7 @@
 schema:
   schema_id: zhung
   name: 中州羅馬字
-  version: "0.5"
+  version: "0.6"
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
@@ -45,7 +45,7 @@ engine:
     - uniquifier
 
 speller:
-  alphabet: 'zyxwvutsrqponmlkjihgfedcba:;<,/\'
+  alphabet: 'zyxwvutsrqponmlkjihgfedcba/\<>,.'
   initials: zyxwvutsrqponmlkjihgfedcba
   delimiter: " '"
   algebra:
@@ -59,75 +59,75 @@ speller:
     - derive/([aeiou])ng(\d?)$/$1gn$2/
     - derive/([iu])a(l|ng?)(\d?)$/a$1$2$3/
     - derive/^([a-z]+)\d$/$1/
-    - 'xlit 1234 :</\'
-    - 'derive/^(.*):$/$1;/'
+    - 'xlit 1234 /\<>'
     - 'derive/^(.*)<$/$1,/'
+    - 'derive/^(.*)>$/$1./'
 
 translator:
   dictionary: zhung
   #spelling_hints: 4
   preedit_format:
-    - 'xform ([aeiou])(l|ng?)([:;<,/\\]) $1$3$2'
-    - 'xform ([aeo])([iu])([:;<,/\\]) $1$3$2'
-    - 'xform a[:;] ä'
-    - 'xform a[<,] â'
+    - 'xform ([aeiou])(l|ng?)([/\\<>,.]) $1$3$2'
+    - 'xform ([aeo])([iu])([/\\<>,.]) $1$3$2'
     - 'xform a/ á'
     - 'xform a\\ à'
-    - 'xform e[:;] ë'
-    - 'xform e[<,] ê'
+    - 'xform a[<,] â'
+    - 'xform a[>.] ǎ'
     - 'xform e/ é'
     - 'xform e\\ è'
-    - 'xform o[:;] ö'
-    - 'xform o[<,] ô'
+    - 'xform e[<,] ê'
+    - 'xform e[>.] ě'
     - 'xform o/ ó'
     - 'xform o\\ ò'
-    - 'xform i[:;] ï'
-    - 'xform i[<,] î'
+    - 'xform o[<,] ô'
+    - 'xform o[>.] ǒ'
     - 'xform i/ í'
     - 'xform i\\ ì'
-    - 'xform u[:;] ü'
-    - 'xform u[<,] û'
+    - 'xform i[<,] î'
+    - 'xform i[>.] ǐ'
     - 'xform u/ ú'
     - 'xform u\\ ù'
-    - 'xform y[;:] ÿ'
-    - 'xform y[<,] ŷ'
+    - 'xform u[<,] û'
+    - 'xform u[>.] ǔ'
     - 'xform y/ ý'
     - 'xform y\\ ỳ'
-    - 'xform w[;:] ẅ'
-    - 'xform w[<,] ŵ'
+    - 'xform y[<,] ŷ'
+    - 'xform y[>.] y̌'
     - 'xform w/ ẃ'
     - 'xform w\\ ẁ'
-  comment_format: &COMMENT_FORMAT
+    - 'xform w[<,] ŵ'
+    - 'xform w[>.] w̌'
+  comment_format:
     - xform ([aeiou])(l|ng?)([1234]) $1$3$2
     - xform ([aeo])([iu])([1234]) $1$3$2
-    - xform a1 ä
-    - xform a2 â
-    - xform a3 á
-    - xform a4 à
-    - xform e1 ë
-    - xform e2 ê
-    - xform e3 é
-    - xform e4 è
-    - xform o1 ö
-    - xform o2 ô
-    - xform o3 ó
-    - xform o4 ò
-    - xform i1 ï
-    - xform i2 î
-    - xform i3 í
-    - xform i4 ì
-    - xform u1 ü
-    - xform u2 û
-    - xform u3 ú
-    - xform u4 ù
-    - xform y1 ÿ
-    - xform y2 ŷ
-    - xform y3 ý
-    - xform y4 ỳ
-    - xform w1 ẅ
-    - xform w2 ŵ
-    - xform w3 ẃ
-    - xform w4 ẁ
+    - xform a1 á
+    - xform a2 à
+    - xform a3 â
+    - xform a4 ǎ
+    - xform e1 é
+    - xform e2 è
+    - xform e3 ê
+    - xform e4 ě
+    - xform o1 ó
+    - xform o2 ò
+    - xform o3 ô
+    - xform o4 ǒ
+    - xform i1 í
+    - xform i2 ì
+    - xform i3 î
+    - xform i4 ǐ
+    - xform u1 ú
+    - xform u2 ù
+    - xform u3 û
+    - xform u4 ǔ
+    - xform y1 ý
+    - xform y2 ỳ
+    - xform y3 ŷ
+    - xform y4 y̌
+    - xform w1 ẃ
+    - xform w2 ẁ
+    - xform w3 ŵ
+    - xform w4 w̌
 
 abc_segmentor:
   extra_tags:
@@ -141,7 +141,37 @@ reverse_lookup:
   tips: 〔倉頡〕
   preedit_format:
     - "xlit|abcdefghijklmnopqrstuvwxyz|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|"
-  comment_format: *COMMENT_FORMAT
+  comment_format:
+    - xform ([aeiou])(l|ng?)([1234]) $1$3$2
+    - xform ([aeo])([iu])([1234]) $1$3$2
+    - xform a1 á
+    - xform a2 à
+    - xform a3 â
+    - xform a4 ǎ
+    - xform e1 é
+    - xform e2 è
+    - xform e3 ê
+    - xform e4 ě
+    - xform o1 ó
+    - xform o2 ò
+    - xform o3 ô
+    - xform o4 ǒ
+    - xform i1 í
+    - xform i2 ì
+    - xform i3 î
+    - xform i4 ǐ
+    - xform u1 ú
+    - xform u2 ù
+    - xform u3 û
+    - xform u4 ǔ
+    - xform y1 ý
+    - xform y2 ỳ
+    - xform y3 ŷ
+    - xform y4 y̌
+    - xform w1 ẃ
+    - xform w2 ẁ
+    - xform w3 ŵ
+    - xform w4 w̌
 
 punctuator:
   import_preset: default
