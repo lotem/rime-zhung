@@ -439,7 +439,7 @@ import_tables:
 省	sing3
 皆	jai1
 接	zie1
-街	je1
+街	jai1
 門	men2
 們	men2
 漲	zhang3
@@ -1002,9 +1002,9 @@ import_tables:
 註	zhu4
 寫	sie3
 慶	qing4
-解	je3
+解	jai3
 解	ji4	0%
-解	xe4	0%
+解	xai4	0%
 塔	ta1
 辦	ban4
 活	huo2
@@ -2102,7 +2102,7 @@ import_tables:
 齰	zhe2
 甫	fu3
 貞	zheng1
-蟹	xa4
+蟹	xai4
 笢	min2
 笢	min3
 療	liau4
@@ -2121,8 +2121,7 @@ import_tables:
 騙	pian4
 蔣	ziang1	0%
 蔣	ziang3
-鞋	xai2	0%
-鞋	xe2
+鞋	xai2
 掘	jue2
 掘	ju2	0%
 孔	kung3
@@ -18643,7 +18642,7 @@ import_tables:
 蟑	zhang1
 蟳	siun2
 蠂	sheo1
-蠏	xe4
+蠏	xai4
 蠧	du4
 衉	ke4
 衚	hu2
