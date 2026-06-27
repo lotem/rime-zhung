@@ -3,8 +3,8 @@
 
 schema:
   schema_id: zhung_combo
-  name: 中州羅馬字（並擊）
-  version: "0.3"
+  name: 中州並擊法
+  version: "0.5"
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
@@ -14,6 +14,7 @@ switches:
   - name: ascii_mode
     reset: 0
     states: [ 中文, 西文 ]
+    abbrev: [ 中, Ａ ]
   - name: full_shape
     states: [ 半角, 全角 ]
   - name: simplification
@@ -38,14 +39,16 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - r10n_translator
+    - script_translator
   filters:
     - simplifier
     - uniquifier
 
 speller:
-  alphabet: zyxwvutsrqponmlkjihgfedcba
-  delimiter: " '"
+  alphabet: "zyxwvutsrqponmlkjihgfedcba'"
+  initials: "zyxwvutsrqponmlkjihgfedcba"
+  finals: "'"
+  delimiter: " "
   algebra:
     - xform/^([A-Za-z]+)\d$/$1/
     #- derive/^yi?/i/
@@ -58,45 +61,43 @@ speller:
     #- derive/^([zcsr]h?)y/$1/
     - derive/^rh/r/
     - derive/^w(a|au|ang?|en)/v$1/
+    # 音節一律後加隔音符號，避免音節切分歧義
+    - "xform/^([a-z]+)$/$1'/"
 
 chord_composer:
-  alphabet: "swxdecfrvgtbnjum ki,lo."
+  alphabet: 'swxdecfrvgtbjum kilo'
   algebra:
-    - 'xlit|swxdecfrvgtbnjum ki,lo.|sczhlfgdbktpLiuVaNIUeOE|'
+    - 'xlit|swxdecfrvgtbjum kilo|sczhlfgdbktpiuVaNLeo|'
+    - 'xform/^a$/ /'
     - xform/^zfb/v/
     - xform/^zf/zh/
     - xform/^cl/ch/
     - xform/^fb/m/
     - xform/^ld/n/
+    - xform/^shg(.+)$/$1/
     - xform/^hg/rh/
     - xform/^g([iV])/j$1/
     - xform/^k([iV])/q$1/
     - xform/^h([iV])/x$1/
-    - 'xform/^a$/ /'
     - xform/ae$/a/
-    - xform/^U$/,/
-    - xform/^E$/./
-    - xform/(ua?)IO$/$1Ne/
-    - xform/aI$/ai/
-    - xform/I[Oe]$/ei/
-    - xform/uI$/ui/
-    - xform/^gI$/ji/
-    - xform/^kI$/qi/
-    - xform/^hI$/xi/
-    - xform/I$/i/
-    - xform/VUE$/VNe/
-    - xform/V(a?)U$/i$1U/
-    - xform/aU$/au/
-    - xform/UE?$/ou/
+    - xform/(ua?)Lo$/$1Ne/
+    - xform/iLo$/VNe/
+    - xform/aL$/ai/
+    - xform/ao$/au/
+    - xform/Lo$/ou/
+    - xform/uL$/ui/
+    - xform/iL$/iou/
+    - xform/^([zcsr]h?)L$/$1y/
+    - xform/^L$/el/
+    - xform/Le?$/ei/
     - xform/([aiuV])Ne$/$1ng/
     - xform/Ne$/eng/
     - xform/([aiuV])N$/$1n/
     - xform/N$/en/
-    - xform/L$/el/
-    - xform/iO$/iuo/
-    - xform/uO$/uo/
-    - xform/aO$/o/
-    - xform/O$/eo/
+    - xform/io$/iuo/
+    - xform/^([bpmfv])o$/$1uo/
+    - xform/^([dtnlgkh]|[zcsr]h?)o$/$1eo/
+    - xform/^o$/eo/
     - xform/^i(ng?)$/yi$1/
     - xform/^i$/yi/
     - xform/^i/y/
@@ -109,7 +110,6 @@ chord_composer:
     - xform/^([zcsr]h)i$/$1y/
     - xform/^([zcsr]h)i([aoeu])/$1$2/
     - xform/^([zcsr]h)i(ng?)$/$1e$2/
-    - xlit/VE/ve/
     - xform/^([bpmfv])$/$1u/
     - xform/^([dtnl])$/$1i/
     - xform/^([gkh])$/$1eo/
@@ -131,11 +131,26 @@ translator:
   dictionary: zhung
   prism: zhung_combo
 
+editor:
+  bindings:
+    # 退格鍵刪除一個拼音音節
+    BackSpace: back_syllable
+
 punctuator:
   import_preset: default
 
 key_binder:
   import_preset: default
+  bindings:
+    # 不用 , . 翻頁
+    - { when: paging, accept: comma, send: comma }
+    - { when: has_menu, accept: period, send: period }
 
 recognizer:
   import_preset: default
+
+__patch:
+  # 使用八股文語言模型
+  - grammar:/hant?
+  # 用家自選配置
+  - zhung_combo.custom:/patch?

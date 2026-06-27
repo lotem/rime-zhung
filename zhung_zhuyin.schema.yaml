@@ -2,9 +2,9 @@
 # encoding: utf-8
 
 schema:
-  schema_id: zhung_42
-  name: 中州注音法（四十二鍵）
-  version: "0.4"
+  schema_id: zhung_zhuyin
+  name: 中州注音法
+  version: "0.5"
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
@@ -15,6 +15,7 @@ switches:
   - name: ascii_mode
     reset: 0
     states: [ 中文, 西文 ]
+    abbrev: [ 中, Ａ ]
   - name: full_shape
     states: [ 半角, 全角 ]
   - name: simplification
@@ -38,13 +39,13 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - r10n_translator
+    - script_translator
   filters:
     - simplifier
     - uniquifier
 
 menu:
-  alternative_select_keys: "ABCDEFGHIJ"
+  alternative_select_labels: ['⇧1', '⇧2', '⇧3', '⇧4', '⇧5', '⇧6', '⇧7', '⇧8', '⇧9', '⇧0']
 
 speller:
   alphabet: '1qaz`2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/- 6347'
@@ -85,90 +86,104 @@ speller:
 
 translator:
   dictionary: zhung
-  prism: zhung_42
+  prism: zhung_zhuyin
   preedit_format:
-    - 'xlit|1qaz`2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/- 6347''|ㄅㄆㄇㄈㄪㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦˉˆˊˋ˙ |'
+    - 'xlit|1qaz`2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/- 6347''|ㄅㄆㄇㄈㄪㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦˊˋˆˇ˙ |'
 
 punctuator:
   full_shape:
     " " : { commit: "　" }
-    "<" : [ ，, 《, 〈, «, ‹ ]
-    ">" : [ 。, 》, 〉, », › ]
-    "?" : [ ？, ／, "/", ÷ ]
+    "<" : { commit: "，" }
+    ">" : { commit: "。" }
+    "?" : [ ？, ／, ÷ ]
     ":" : [ ：, ； ]
     "'" : { pair: [ "‘", "’" ] }
     "\"" : { pair: [ "“", "”" ] }
-    "\\" : [ 、, ＼, "\\" ]
-    "|" : [ ·, ｜, "|", "§", "¦" ]
-    "~" : [ 〜, "~", ～, 〰 ]
+    "\\" : [ 、, ＼ ]
+    "|" : [ ·, ｜, "§", "¦" ]
+    "`" : ｀
+    "~" : ～
     "!" : { commit: ！ }
-    "@" : [ ＠, "@", ☯ ]
-    "#" : [ ＃, "#", ⌘ ]
-    "%" : [ ％, "%", "°", "℃" ]
+    "@" : [ ＠, ☯ ]
+    "#" : [ ＃, ⌘ ]
+    "%" : [ ％, "°", "℃" ]
     "$" : [ ￥, "$", "€", "£", "¥", "¢", "¤" ]
     "^" : { commit: …… }
-    "&" : [ ＆, "&" ]
-    "*" : [ ＊, "*", ·, ×, ※, ❂, ・ ]
+    "&" : ＆
+    "*" : [ ＊, ·, ・, ×, ※, ❂ ]
     "(" : （
     ")" : ）
-    "_" : [ ——, －, "-" ]
-    "+" : [ ＋, "+" ]
-    "=" : [ ＝, "=" ]
-    "[" : [ 「, 【, 〔, ［ ]
-    "]" : [ 」, 】, 〕, ］ ]
-    "{" : [ 『, 〖, ｛ ]
-    "}" : [ 』, 〗, ｝ ]
+    "_" : [ ——, － ]
+    "+" : ＋
+    "=" : ＝
+    "[" : [ 「, 【, 《, 〔, ［ ]
+    "]" : [ 」, 】, 》, 〕, ］ ]
+    "{" : [ 『, 〖, 〈, ｛ ]
+    "}" : [ 』, 〗, 〉, ｝ ]
   half_shape:
-    "<" : [ ，, 《, 〈, «, ‹ ]
-    ">" : [ 。, 》, 〉, », › ]
+    "<" : { commit: "，" }
+    ">" : { commit: "。" }
     "?" : [ ？, ／, "/", ÷ ]
     ":" : [ ：, ； ]
     "'" : { pair: [ "‘", "’" ] }
     "\"" : { pair: [ "“", "”" ] }
     "\\" : [ 、, "\\", ＼ ]
     "|" : [ ·, "|", ｜, "§", "¦" ]
-    "~" : [ "~", "~~", 〜, ～, 〰 ]
+    "`" : "`"
+    "~" : "~"
     "!" : { commit: ！ }
-    "@" : [ "@", ＠, ☯ ]
-    "#" : [ "#", ＃, ⌘ ]
+    "@" : { commit: "@" }
+    "#" : { commit: "#" }
     "%" : [ "%", ％, "°", "℃" ]
     "$" : [ ￥, "$", "€", "£", "¥", "¢", "¤" ]
     "^" : { commit: …… }
-    "&" : [ "&", ＆ ]
-    "*" : [ "*", ＊, ·, ×, ※, ❂, ・ ]
-    "(" : （
-    ")" : ）
+    "&" : { commit: "&" }
+    "*" : [ "*", ＊, ·, ・, ×, ※, ❂ ]
+    "(" : { commit: （ }
+    ")" : { commit: ） }
     "_" : [ ——, －, "-" ]
-    "+" : [ "+", ＋ ]
-    "=" : [ "=", ＝ ]
-    "[" : [ 「, 【, 〔, ［ ]
-    "]" : [ 」, 】, 〕,  ］ ]
-    "{" : [ 『, 〖, ｛ ]
-    "}" : [ 』, 〗, ｝ ]
+    "+" : "+"
+    "=" : "="
+    "[" : [ 「, 【, 《, 〔, ［ ]
+    "]" : [ 」, 】, 》, 〕, ］ ]
+    "{" : [ 『, 〖, 〈, ｛ ]
+    "}" : [ 』, 〗, 〉, ｝ ]
+
+editor:
+  bindings:
+    space: toggle_selection
+    Tab: toggle_selection
 
 key_binder:
+  import_preset: default
   bindings:
-    # Emacs style
-    - { when: composing, accept: Control+p, send: Up }
-    - { when: composing, accept: Control+n, send: Down }
-    - { when: composing, accept: Control+b, send: Left }
-    - { when: composing, accept: Control+f, send: Right }
-    - { when: composing, accept: Control+a, send: Home }
-    - { when: composing, accept: Control+e, send: End }
-    - { when: composing, accept: Control+d, send: Delete }
-    - { when: composing, accept: Control+k, send: Shift+Delete }
-    - { when: composing, accept: Control+g, send: Escape }
-    - { when: composing, accept: Alt+v, send: Page_Up }
-    - { when: composing, accept: Control+v, send: Page_Down }
-    # commonly used paging keys
-    - { when: composing, accept: ISO_Left_Tab, send: Page_Up }
-    - { when: composing, accept: Shift+Tab, send: Page_Up }
-    - { when: composing, accept: Tab, send: Page_Down }
+    - { when: has_menu, accept: comma, send: comma }      # ㄝ
+    - { when: has_menu, accept: period, send: period }    # ㄡ
+    - { when: has_menu, accept: minus, send: minus }      # ㄦ
     - { when: paging, accept: minus, send: Page_Up }
     - { when: has_menu, accept: equal, send: Page_Down }
+    - { when: has_menu, accept: Shift+exclam, send: KP_1 }
+    - { when: has_menu, accept: Shift+at, send: KP_2 }
+    - { when: has_menu, accept: Shift+numbersign, send: KP_3 }
+    - { when: has_menu, accept: Shift+dollar, send: KP_4 }
+    - { when: has_menu, accept: Shift+percent, send: KP_5 }
+    - { when: has_menu, accept: Shift+asciicircum, send: KP_6 }
+    - { when: has_menu, accept: Shift+ampersand, send: KP_7 }
+    - { when: has_menu, accept: Shift+asterisk, send: KP_8 }
+    - { when: has_menu, accept: Shift+parenleft, send: KP_9 }
+    - { when: has_menu, accept: Shift+parenright, send: KP_0 }
+    # 字形轉換
+    - { when: always, accept: Control+Shift+4, toggle: zh_hans }
+    - { when: always, accept: Control+Shift+dollar, toggle: zh_hans }
 
 recognizer:
   patterns:
     email: "^[a-z][-_.0-9a-z]*@.*$"
     uppercase: "^[A-Z][-_+.'0-9A-Za-z]*$"
     url: "^(www[.]|https?:|ftp:|mailto:).*$"
+
+__patch:
+  # 使用八股文語言模型
+  - grammar:/hant?
+  # 用家自選配置
+  - zhung_zhuyin.custom:/patch?

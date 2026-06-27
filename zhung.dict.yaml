@@ -28,19 +28,19 @@ import_tables:
 是	shy4
 得	de1
 上	shang4
-中	zhung1	90%
-中	zhung4	10%
+中	zhung1	95%
+中	zhung4	5%
 的	di1
 的	le1
 我	wo3
 有	you3
 冇	mau1
-冇	mou1	0%
-了	liau3	90%
-了	lo3	10%
+冇	mou1
+了	liau3
+了	lo3	0%
 了	leo1	0%
 或	huai2
-或	hue2	0%
+或	hue2
 人	rhen2
 和	huo2
 和	huo4	0%
@@ -1087,7 +1087,8 @@ import_tables:
 宇	yu3
 兒	yi2	0%
 兒	el2
-便	pian2
+便	pian2 1%
+便宜	pian2 yi2
 便	bian4
 麥	me1
 歐	ou1
