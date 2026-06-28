@@ -8,6 +8,7 @@ schema:
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
+    宮保拼音七指禪指法
     並擊輸入老派鄭州話
 
 switches:
@@ -118,14 +119,17 @@ chord_composer:
     - "xform/^([bpmfv])([iu]|i?[ae]|uo|[ae]i|i?[ao]u|[ei]n|i?an|ang|[ei]ng)$/$1$2'/"
     - "xform/^([dtnl])(i|i?u|i?[ae]|[eu]o|iu[eo]|[aeu]i|i?[ao]u|i?u?an|[ei]n|i?un|i?ang|[ei]ng|i?ung)$/$1$2'/"
     - "xform/^([gkh])(u|u?[ae]|[eu]o|u?ai|[eu]i|[ao]u|u?an|[eu]n|u?ang|[eu]ng)$/$1$2'/"
-    - "xform/^([jqx]|[zcs]i?)([iu]|u?[ae]|uo|ai|[ao]u|u?an|[iu]n|[aiu]ng)$/$1$2'/"
-    - "xform/^([zcsr]h?)([yu]|u?[ae]|[eu]o|u?ai|[eu]i|[ao]u|u?an|[eu]n|u?ang|[eu]ng)$/$1$2'/"
+    - "xform/^([jqx]|[zcs]i?)([iu]|u?[ae]|uo|ai|u?[ao]u|u?an|[iu]n|[aiu]ng)$/$1$2'/"
+    - "xform/^([zcsr]h?)([yu]|u?[ae]|[eu]o|u?ai|[eu]i|u?[ao]u|u?an|[eu]n|u?ang|[eu]ng)$/$1$2'/"
     - "xform/^(y?)([aeo]|[ae]i|[ao]u|[aeiu]ng?)$/$1$2'/"
-    - "xform/^(yu|w)([aeo]|[au]i|[au]ng?)$/$1$2'/"
+    - "xform/^(yu|w)([aeo]|[au]i|[ao]u|[au]ng?)$/$1$2'/"
     - "xform/^(eo|el|yi|wu|yu)$/$1'/"
     - "erase/^([A-Za-z]+)$/"
   prompt_format:
     - "xform/^(.*)$/[$1]/"
+  bindings:
+    # 回車鍵上屏按鍵序列
+    Return: commit_raw_input
 
 translator:
   dictionary: zhung
