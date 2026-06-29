@@ -24,8 +24,8 @@ switches:
 engine:
   processors:
     - ascii_composer
-    - chord_composer
     - recognizer
+    - chord_composer
     - key_binder
     - speller
     - punctuator
