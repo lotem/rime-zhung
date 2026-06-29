@@ -1,0 +1,150 @@
+# 轉拼音
+
+zhuan_pinyin:
+  __append:
+    # 轉換翹舌阻音 rh 爲標準拼音的 r
+    - xform/^rh/r/
+
+    # 兼容尖音拼寫，與舌尖元音混淆時韻母 i 拼作 -yi（如 zi -> zyi 即）
+    - xform/^([zcs])i(\d?)$/$1yi$2/
+
+    # 將中州羅馬字的舌尖元音 y 轉換為拼音的 i（如 sy -> si）
+    - derive/([zcsr]h?)y(\d?)$/$1i$2/
+    # 支持與尖音混淆時的強調形式 ï，鍵盤輸入 ii（如 sy -> sii）
+    - xform/([zcsr]h?)y(\d?)$/$1ii$2/
+    # 兒化韻
+    - xform/([aoeiu])l(\d?)$/$1r\2/
+
+    # 轉寫 iung -> iong
+    - derive/^([zcsnl])iung/$1iong/
+    # 兼容撮口介音拼寫為 -yu 或 v（如 ziu -> zyu / zv 聚、俗）
+    - derive/^([zcsnl])iu/$1yu/
+    - xform/^([zcsnl])iu/$1v/
+
+    # 補全團音後省略的介音 i
+    - xform/^([jqx])([aeo])/$1i$2/
+    # 恢復 ㄩ 的技術替代形式（如 ju 舉 -> jyu / jv）
+    - derive/^([jqx])u/$1v/
+    - derive/^([jqxnl])v/$1yu/
+
+    # 元音 ㄜ (eo) 與 ㄝ (e) 的對立變換
+    # 韻母 ê 在無介音時，爲避免與 e 混淆，拼作 ae（如 ge -> gae 革）
+    - xform/^([bpfmvdtnlgkhr]|[zcs]h?)e(\d?)$/$1ae$2/
+    - xform/^e(\d?)$/ae$1/
+    # 中州羅馬字的 eo (ㄜ) 映射爲漢語拼音的 e
+    - xform/eo/e/
+
+    # 兼容轉寫 uo -> o
+    - derive/^([bpmfv])uo/$1o/
+    # 兼容轉寫 iuo -> io
+    - derive/^([jqx])uo/$1io/
+    - derive/^([zcsnl])vo/$1io/
+    - derive/([yi])uo/$1o/
+    # 兼容轉寫 iai -> iae
+    - derive/([yi])ai/$1ae/
+    # 轉寫 au -> ao
+    - xform/au/ao/
+    # 允許以完整形式 iou 出現（如 ziou 就），同時兼容拼音 iu
+    - derive/iou/iu/
+    # 零聲母 ui, un 還原爲拼音的 wei, wen
+    - xform/^wui/wei/
+    - xform/^wun/wen/
+    # 轉寫 ung -> ong
+    - xform/ung/ong/
+
+    # 反模糊音 w -> v
+    - derive/^w(u|a|ao|ang?|en)/v$1/
+
+pinyin_shuru:
+  __append:
+    # 首字母簡拼支持
+    - abbrev/^([a-z]).+$/$1/
+    - abbrev/^([zcs]h).+$/$1/
+    # 拼寫預測補全
+    - derive/ong\d$/on/
+    - derive/^([zcs])ia.+\d$/$1ia/
+    - derive/^([zcs])y.+\d$/$1y/
+    - derive/^([zcs]?)yua.+\d$/$1yua/
+    # 消除聲調數字
+    - xform/^([a-z]+)\d$/$1/
+
+xanshy_pinyin:
+  __append:
+    # 轉換翹舌阻音 rh 爲標準拼音的 r
+    - xform/^rh/r/
+    # 兼容尖音拼寫，與舌尖元音混淆時韻母 i 拼作 -yi（如 zi -> zyi 即）
+    - xform/^([zcs])i(\d?)$/$1yi$2/
+    # 將中州羅馬字的舌尖元音 y 轉換爲拼音的 i（如 sy -> si）
+    - derive/([zcsr]h?)y(\d?)$/$1i$2/
+    # 兒化韻
+    - xform/([aoeiu])l(\d?)$/$1r\2/
+    # 轉寫 iung -> iong
+    - derive/^([zcsnl])iung/$1iong/
+    # 撮口介音拼寫爲 v（如 ziu -> zyu / zv 聚、俗）
+    - xform/^([zcsnl])iu/$1v/
+    # 補全團音後省略的介音 i
+    - xform/^([jqx])([aeo])/$1i$2/
+
+    # 元音 ㄜ (eo) 與 ㄝ (e) 的對立變換
+    # 韻母 ê 在無介音時，爲避免與 e 混淆，拼作 ae（如 ge -> gae 革）
+    - xform/^([bpfmvdtnlgkhr]|[zcs]h?)e(\d?)$/$1ae$2/
+    - xform/^e(\d?)$/ae$1/
+    # 中州羅馬字的 eo (ㄜ) 映射爲漢語拼音的 e
+    - xform/eo/e/
+
+    # 轉寫 uo -> o
+    - xform/^([bpmfv])uo/$1o/
+    # 轉寫 au -> ao
+    - xform/au/ao/
+    # 拼音 iu
+    - xform/iou/iu/
+    # 零聲母 ui, un 還原爲拼音的 wei, wen
+    - xform/^wui/wei/
+    - xform/^wun/wen/
+    # 轉寫 ung -> ong
+    - xform/ung/ong/
+
+xanshy_shengdiau:
+  __append:
+    # 顯示中原官話調號，優雅美觀
+    - xform ([aeiou])(r|ng?)([1234]) $1$3$2
+    - xform ([aeo])([eiou])([1234]) $1$3$2
+    - xform a1 á
+    - xform a2 à
+    - xform a3 â
+    - xform a4 ǎ
+    - xform e1 é
+    - xform e2 è
+    - xform e3 ê
+    - xform e4 ě
+    - xform o1 ó
+    - xform o2 ò
+    - xform o3 ô
+    - xform o4 ǒ
+    - xform (ii|ï)1 ḯ
+    - xform (ii|ï)2 ï̀
+    - xform (ii|ï)3 ï̂
+    - xform (ii|ï)4 ï̌
+    - xform ii ï
+    - xform i1 í
+    - xform i2 ì
+    - xform i3 î
+    - xform i4 ǐ
+    - xform u1 ú
+    - xform u2 ù
+    - xform u3 û
+    - xform u4 ǔ
+    - xform (v|ü)1 ǘ
+    - xform (v|ü)2 ǜ
+    - xform (v|ü)3 ü̂
+    - xform (v|ü)4 ǚ
+    # 顯示 ü
+    - xform/([zcsnl])v/$1ü/
+    - xform/([zcsnl])ue/$1üe/
+
+gungbau_shuru:
+  __append:
+    # 不打聲調
+    - xform/^([A-Za-z]+)\d$/$1/
+    # 音節一律後加隔音符號，避免音節切分歧義
+    - "xform/^([a-z]+)$/$1'/"

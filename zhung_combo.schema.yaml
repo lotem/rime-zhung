@@ -3,7 +3,7 @@
 
 schema:
   schema_id: zhung_combo
-  name: 宮保拼音（中原官話）
+  name: 中原話宮保拼音
   version: "0.6"
   author:
     - 佛振 <chen.sst@gmail.com>
@@ -51,24 +51,14 @@ speller:
   finals: "'"
   delimiter: " "
   algebra:
-    - xform/^([A-Za-z]+)\d$/$1/
-    #- derive/^yi?/i/
-    #- derive/^wu?/u/
-    - derive/^wu/vu/
-    - derive/^([vw])u([in])/$1e$2/
-    - derive/^([jqx])([^i])/$1i$2/
-    - derive/ui/uei/
-    - derive/([iu])n/$1en/
-    #- derive/^([zcsr]h?)y/$1/
-    - derive/^rh/r/
-    - derive/^w(a|au|ang?|en)/v$1/
-    # 音節一律後加隔音符號，避免音節切分歧義
-    - "xform/^([a-z]+)$/$1'/"
+    __patch:
+      - zhuan_pinyin:/zhuan_pinyin
+      - zhuan_pinyin:/gungbau_shuru
 
 chord_composer:
   alphabet: 'swxdecfrvgtbjum kilo'
   algebra:
-    - 'xlit|swxdecfrvgtbjum kilo|sczhlfgdbktpiuVaNLeo|'
+    - 'xlit|swxdecfrvgtbjum kilo|sczhlfgdbktpiuVaNReo|'
     - 'xform/^a$/ /'
     - xform/^zfb/v/
     - xform/^zf/zh/
@@ -76,55 +66,56 @@ chord_composer:
     - xform/^fb/m/
     - xform/^ld/n/
     - xform/^shg(.+)$/$1/
-    - xform/^hg/rh/
+    - xform/^hg/r/
     - xform/^g([iV])/j$1/
     - xform/^k([iV])/q$1/
     - xform/^h([iV])/x$1/
-    - xform/(ua?)Lo$/$1Ne/
-    - xform/iLo$/VNe/
-    - xform/aL$/ai/
-    - xform/ao$/au/
-    - xform/Lo$/ou/
-    - xform/uL$/ui/
-    - xform/iL$/iou/
-    - xform/^([zcsr]h?)L$/$1y/
-    - xform/^L$/el/
-    - xform/Le?$/ei/
-    - xform/([aiuV])Ne$/$1ng/
+    - xform/(ua?)Ro$/$1Ne/
+    - xform/iRo$/VNe/
+    - xform/aR$/ai/
+    - xform/ao$/ao/
+    - xform/Ro$/ou/
+    - xform/uR$/ui/
+    - xform/iR$/iu/
+    - xform/^([zcsr]h?)R$/$1i/
+    - xform/^R$/er/
+    - xform/Re?$/ei/
+    - xform/([ai])Ne$/$1ng/
+    - xform/^uNe$/weng/
+    - xform/uNe$/ong/
+    - xform/VNe$/iong/
     - xform/Ne$/eng/
     - xform/([aiuV])N$/$1n/
     - xform/N$/en/
-    - xform/io$/iuo/
-    - xform/^([bpmfv])o$/$1uo/
-    - xform/^([dtnlgkh]|[zcsr]h?)e$/$1eo/
-    - xform/^e$/eo/
+    - xform/^([bpmfv])uo$/$1o/
     - xform/iae$/iai/
-    - xform/ae$/e/
     - xform/^i(ng?)$/yi$1/
     - xform/^i$/yi/
+    - xform/^iu/you/
     - xform/^i/y/
-    - xform/^u(i|ng?)$/wu$1/
+    - xform/^u([in])$/we$1/
     - xform/^u$/wu/
     - xform/^u/w/
     - xform/^V/yu/
-    - xform/V/iu/
-    - xform/^([jqx])i([aoeu])/$1$2/
-    - xform/^([zcsr]h)i$/$1y/
+    - xform/^([jqx])V/$1u/
+    - xform/V/v/
+    - xform/^([zcs])i$/$1yi/
     - xform/^([zcsr]h)i([aoeu])/$1$2/
     - xform/^([zcsr]h)i(ng?)$/$1e$2/
     - xform/^([bpmfv])$/$1u/
     - xform/^([dtnl])$/$1i/
-    - xform/^([gkh])$/$1eo/
-    - xform/^([zcsr]h?)$/$1y/
+    - xform/^([gkh])$/$1e/
+    - xform/^([zcsr]h?)$/$1i/
   output_format:
-    - "xform/^([bpmfv])([iu]|i?[ae]|uo|[ae]i|i?[ao]u|[ei]n|i?an|ang|[ei]ng)$/$1$2'/"
-    - "xform/^([dtnl])(i|i?u|i?[ae]|[eu]o|iu[eo]|[aeu]i|i?[ao]u|i?u?an|[ei]n|i?un|i?ang|[ei]ng|i?ung)$/$1$2'/"
-    - "xform/^([gkh])(u|u?[ae]|[eu]o|u?ai|[eu]i|[ao]u|u?an|[eu]n|u?ang|[eu]ng)$/$1$2'/"
-    - "xform/^([jqx]|[zcs]i?)([iu]|u?[ae]|uo|ai|u?[ao]u|u?an|[iu]n|[aiu]ng)$/$1$2'/"
-    - "xform/^([zcsr]h?)([yu]|u?[ae]|[eu]o|u?ai|[eu]i|u?[ao]u|u?an|[eu]n|u?ang|[eu]ng)$/$1$2'/"
-    - "xform/^(y?)([aeo]|[ae]i|[ao]u|[aeiu]ng?)$/$1$2'/"
-    - "xform/^(yu|w)([aeo]|[au]i|[ao]u|[au]ng?)$/$1$2'/"
-    - "xform/^(eo|el|yi|wu|yu)$/$1'/"
+    - "xform/^([bpm])([iu]|a|[ia]?e|o|[ae]i|i?ao|[oi]u|i?an|[ie]n|[ei]ng|ang|ong)$/$1$2'/"
+    - "xform/^([fvw])([iu]|a|o|[ae]i|ao|ou|an|en|eng|ang|ong)$/$1$2'/"
+    - "xform/^([dt])([iu]|i?a|[ia]?e|[iu]o|[aeu]i|i?ao|[oi]u|[iu]?an|[ue]n|[ei]ng|ang|ong)$/$1$2'/"
+    - "xform/^([nl])([iuv]|i?a|[iva]?e|[iuv]?o|[aeu]i|i?ao|[oi]u|[iuv]?an|[iuve]n|[ei]ng|i?ang|i?ong)$/$1$2'/"
+    - "xform/^([gkh])(u|u?a|u?a?e|uo|u?ai|[ue]i|u?ao|u?ou|u?an|[ue]n|eng|u?ang|ong)$/$1$2'/"
+    - "xform/^([zcs]h?|r)([iu]|u?a|a?e|uo|u?ai|[ue]i|u?ao|u?ou|u?an|[ue]n|eng|u?ang|ong)$/$1$2'/"
+    - "xform/^([jqxy])([iu]|i?ai?|[iu]?e|[iu]?o|[iu]?ao|u?ou|iu|[iu]?an|[iu]n|ing|i?ang|i?ong)$/$1$2'/"
+    - "xform/^([zcs])(yi|v|[iv]e|[iv]o|[iv]ao|[iv]ou|iu|[iuv]an|[iuv]n|ing|iang|iong)$/$1$2'/"
+    - "xform/^([aeo]|[ae]i|ae|ao|ou|[ae]ng?|er)$/$1'/"
     - "erase/^([A-Za-z]+)$/"
   prompt_format:
     - "xform/^(.*)$/[$1]/"
@@ -135,6 +126,8 @@ chord_composer:
 translator:
   dictionary: zhung
   prism: zhung_combo
+  preedit_format:
+    __patch: zhuan_pinyin:/xanshy_shengdiau
 
 editor:
   bindings:

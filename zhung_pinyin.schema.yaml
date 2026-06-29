@@ -3,14 +3,14 @@
 
 schema:
   schema_id: zhung_pinyin
-  name: 增補漢語拼音（中原官話）
-  version: "0.1"
+  name: 中原話增補拼音
+  version: '0.2'
   author:
     - 居戎氏
   description: |
     中原官話·鄭州老派口音
     增補《漢語拼音》輸入方案
-    底層適配中州羅馬字詞典（數字標調版）
+    底層適配中州羅馬字詞典
   dependencies:
     - stroke
 
@@ -49,113 +49,23 @@ engine:
     - uniquifier
 
 speller:
-  alphabet: 'abcdefghijklmnopqrstuvwxyz1234'
-  initials: abcdefghijklmnopqrstuvwxyz
+  alphabet: 'abcdefghijklmnopqrstuvwxyz'
   delimiter: " '"
   algebra:
-    # 轉換翹舌阻音 rh 爲標準拼音的 r
-    - xform/^rh/r/
-
-    # 兼容尖音拼寫，與舌尖元音混淆時韻母 i 拼作 -yi（如 zi -> zyi 即）
-    - xform/^([zcs])i(\d?)$/$1yi$2/
-
-    # 將中州羅馬字的舌尖元音 y 轉換為拼音的 i（如 sy -> si）
-    - derive/([zcsr]h?)y(\d?)$/$1i$2/
-    # 支持與尖音混淆時的強調形式 ï，鍵盤輸入 ii（如 sy -> sii）
-    - xform/([zcsr]h?)y(\d?)$/$1ii$2/
-
-    # 兼容撮口介音拼寫為 -yu 或 v（如 ziu -> zyu / zv 聚、俗）
-    - derive/^([zcsnl])iu/$1yu/
-    - xform/^([zcsnl])iu/$1v/
-
-    # 補全團音後省略的介音 i
-    - xform/^([jqx])([aeo])/$1i$2/
-    # 恢復 ㄩ 的技術替代形式（如 ju 舉 -> jyu / jv）
-    - derive/^([jqx])u/$1v/
-    - derive/^([jqxnl])v/$1yu/
-
-    # 元音 ㄜ (eo) 與 ㄝ (e) 的對立變換
-    # 韻母 ê 在無介音時，爲避免與 e 混淆，鍵盤輸入 ee（如 ge -> gee 革）
-    - xform/^([bpfmvdtnlgkhr]|[zcs]h?)e(\d?)$/$1ee$2/
-    - derive/^e(\d?)$/ee$1/
-    # 中州羅馬字的 eo (ㄜ) 映射爲漢語拼音的 e
-    - derive/eo/e/
-
-    # 允許以完整形式 iou 出現（如 ziou 就），同時兼容拼音 iu
-    - derive/iou/iu/
-    # 零聲母 ui, un 還原爲拼音的 wei, wen
-    - xform/^wui/wei/
-    - xform/^wun/wen/
-
-    # 首字母簡拼支持
-    - abbrev/^([a-z]).+$/$1/
-    - abbrev/^([zcs]h).+$/$1/
-    # 消除聲調數字
-    - xform/^([a-z]+)\d$/$1/
+    __patch:
+      - zhuan_pinyin:/zhuan_pinyin
+      - zhuan_pinyin:/pinyin_shuru
 
 translator:
   dictionary: zhung
   prism: zhung_pinyin
+  preedit_format:
+    __patch:
+      - zhuan_pinyin:/xanshy_shengdiau
   comment_format:
-    # 轉換翹舌阻音 rh 爲標準拼音的 r
-    - xform/^rh/r/
-    # 兼容尖音拼寫，與舌尖元音混淆時韻母 i 拼作 -yi（如 zi -> zyi 即）
-    - xform/^([zcs])i(\d?)$/$1yi$2/
-    # 支持與尖音混淆時的強調形式 ï，鍵盤輸入 ii（如 sy -> sii）
-    - xform/([zcsr]h?)y(\d?)$/$1ii$2/
-    # 兼容撮口介音拼寫為 -yu 或 v（如 ziu -> zyu / zv 聚、俗）
-    #- xform/^([zcsnl])iu/$1yu/
-    - xform/^([zcsnl])iu/$1v/
-    # 補全團音後省略的介音 i
-    - xform/^([jqx])([aeo])/$1i$2/
-    # 元音 ㄜ (eo) 與 ㄝ (e) 的對立變換
-    # 韻母 ê 在無介音時，爲避免與 e 混淆，鍵盤輸入 ee（如 ge -> gee 革）
-    - xform/^([bpfmvdtnlgkhr]|[zcs]h?)e(\d?)$/$1ee$2/
-    - derive/^e(\d?)$/ee$1/
-    # 中州羅馬字的 eo (ㄜ) 映射爲漢語拼音的 e
-    - derive/eo/e/
-    # 允許以完整形式 iou 出現（如 ziou 就）
-    #- xform/iou/iu/
-    # 零聲母 ui, un 還原爲拼音的 wei, wen
-    - xform/^wui/wei/
-    - xform/^wun/wen/
-    # 顯示中原官話調號，優雅美觀
-    - xform ([aeiou])(r|ng?)([1234]) $1$3$2
-    - xform ([aeo])([iou])([1234]) $1$3$2
-    - xform a1 á
-    - xform a2 à
-    - xform a3 â
-    - xform a4 ǎ
-    - xform ee1 ë́
-    - xform ee2 ë̀
-    - xform ee3 ë̂
-    - xform ee4 ë̌
-    - xform ee ë
-    - xform e1 é
-    - xform e2 è
-    - xform e3 ê
-    - xform e4 ě
-    - xform o1 ó
-    - xform o2 ò
-    - xform o3 ô
-    - xform o4 ǒ
-    - xform ii1 ḯ
-    - xform ii2 ï̀
-    - xform ii3 ï̂
-    - xform ii4 ï̌
-    - xform ii ï
-    - xform i1 í
-    - xform i2 ì
-    - xform i3 î
-    - xform i4 ǐ
-    - xform u1 ú
-    - xform u2 ù
-    - xform u3 û
-    - xform u4 ǔ
-    - xform v1 ǘ
-    - xform v2 ǜ
-    - xform v3 ü̂
-    - xform v4 ǚ
+    __patch:
+      - zhuan_pinyin:/xanshy_pinyin
+      - zhuan_pinyin:/xanshy_shengdiau
 
 reverse_lookup:
   dictionary: stroke
@@ -166,65 +76,9 @@ reverse_lookup:
   preedit_format:
     - xlit/hspnz/一丨丿丶乙/
   comment_format:
-    # 轉換翹舌阻音 rh 爲標準拼音的 r
-    - xform/^rh/r/
-    # 兼容尖音拼寫，與舌尖元音混淆時韻母 i 拼作 -yi（如 zi -> zyi 即）
-    - xform/^([zcs])i(\d?)$/$1yi$2/
-    # 支持與尖音混淆時的強調形式 ï，鍵盤輸入 ii（如 sy -> sii）
-    - xform/([zcsr]h?)y(\d?)$/$1ii$2/
-    # 兼容撮口介音拼寫為 -yu 或 v（如 ziu -> zyu / zv 聚、俗）
-    #- xform/^([zcsnl])iu/$1yu/
-    - xform/^([zcsnl])iu/$1v/
-    # 補全團音後省略的介音 i
-    - xform/^([jqx])([aeo])/$1i$2/
-    # 元音 ㄜ (eo) 與 ㄝ (e) 的對立變換
-    # 韻母 ê 在無介音時，爲避免與 e 混淆，鍵盤輸入 ee（如 ge -> gee 革）
-    - xform/^([bpfmvdtnlgkhr]|[zcs]h?)e(\d?)$/$1ee$2/
-    - derive/^e(\d?)$/ee$1/
-    # 中州羅馬字的 eo (ㄜ) 映射爲漢語拼音的 e
-    - derive/eo/e/
-    # 允許以完整形式 iou 出現（如 ziou 就）
-    #- xform/iou/iu/
-    # 零聲母 ui, un 還原爲拼音的 wei, wen
-    - xform/^wui/wei/
-    - xform/^wun/wen/
-    # 顯示中原官話調號，優雅美觀
-    - xform ([aeiou])(r|ng?)([1234]) $1$3$2
-    - xform ([aeo])([iou])([1234]) $1$3$2
-    - xform a1 á
-    - xform a2 à
-    - xform a3 â
-    - xform a4 ǎ
-    - xform ee1 ë́
-    - xform ee2 ë̀
-    - xform ee3 ë̂
-    - xform ee4 ë̌
-    - xform ee ë
-    - xform e1 é
-    - xform e2 è
-    - xform e3 ê
-    - xform e4 ě
-    - xform o1 ó
-    - xform o2 ò
-    - xform o3 ô
-    - xform o4 ǒ
-    - xform ii1 ḯ
-    - xform ii2 ï̀
-    - xform ii3 ï̂
-    - xform ii4 ï̌
-    - xform ii ï
-    - xform i1 í
-    - xform i2 ì
-    - xform i3 î
-    - xform i4 ǐ
-    - xform u1 ú
-    - xform u2 ù
-    - xform u3 û
-    - xform u4 ǔ
-    - xform v1 ǘ
-    - xform v2 ǜ
-    - xform v3 ü̂
-    - xform v4 ǚ
+    __patch:
+      - zhuan_pinyin:/xanshy_pinyin
+      - zhuan_pinyin:/xanshy_shengdiau
 
 punctuator:
   import_preset: default
