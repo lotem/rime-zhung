@@ -3,8 +3,8 @@
 
 schema:
   schema_id: zhung_combo
-  name: 中州並擊法
-  version: "0.5"
+  name: 宮保拼音（中原官話）
+  version: "0.6"
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
@@ -80,7 +80,6 @@ chord_composer:
     - xform/^g([iV])/j$1/
     - xform/^k([iV])/q$1/
     - xform/^h([iV])/x$1/
-    - xform/ae$/a/
     - xform/(ua?)Lo$/$1Ne/
     - xform/iLo$/VNe/
     - xform/aL$/ai/
@@ -97,8 +96,10 @@ chord_composer:
     - xform/N$/en/
     - xform/io$/iuo/
     - xform/^([bpmfv])o$/$1uo/
-    - xform/^([dtnlgkh]|[zcsr]h?)o$/$1eo/
-    - xform/^o$/eo/
+    - xform/^([dtnlgkh]|[zcsr]h?)e$/$1eo/
+    - xform/^e$/eo/
+    - xform/iae$/iai/
+    - xform/ae$/e/
     - xform/^i(ng?)$/yi$1/
     - xform/^i$/yi/
     - xform/^i/y/

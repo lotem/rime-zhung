@@ -147,7 +147,7 @@
 爲適用拼寫中原官話，擴充《漢語拼音方案》如下：
 
 1. 增設普通話中缺失的聲母 v 和韻母 iai, uê, üo
-2. 韻母 ê 在無介音時，爲避免與 e 混淆，鍵盤輸入 `ee`
+2. 韻母 ê 在無介音時，爲避免與 e 混淆，鍵盤輸入 `ae`
 2. 兼容尖音的拼寫，與舌尖元音混淆時韻母 i 拼作 -yi
   - 即 zyi
   - 七 cyi
@@ -176,24 +176,24 @@
 
 * v = ZFB     用於 未 = ZFBI
 * gh = SHG    僅用於 啊 = SHGA
-* eo = O
 * iuo = IO
-* e = E
+* e = AE
 * ue = UE
 * iai = IAR
-* iou = IR    不拼作 IRO
-* iung = ÜNE  可活用爲 IRO
 
 以下並擊指法不變，因中州羅馬字記法不同重新闡述：
 
 * rh = HG
 * iu = Ü
 * iue = ÜE
+* eo = E
 * el = R
 * ui = UR
 * au = AO
 * iau = IAO
+* iou = IR    不拼作 IRO
 * iuan = ÜAN
 * un = UN
 * iun = ÜN
 * ung = URO
+* iung = IRO  或拼作 ÜNE
