@@ -17,6 +17,7 @@ zhuan_pinyin:
 
     # 轉寫 iung -> iong
     - derive/^([zcsnl])iung/$1iong/
+    - derive/^([jqx])ung/$1iong/
     # 兼容撮口介音拼寫為 -yu 或 v（如 ziu -> zyu / zv 聚、俗）
     - derive/^([zcsnl])iu/$1yu/
     - xform/^([zcsnl])iu/$1v/
