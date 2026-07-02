@@ -103,7 +103,7 @@ chord_composer:
     - xform/^([zcsr]h)i([aoeu])/$1$2/
     - xform/^([zcsr]h)i(ng?)$/$1e$2/
     - xform/^([bpmfv])$/$1u/
-    - xform/^([dtnl])$/$1i/
+    - xform/^([dtnl])$/$1e/
     - xform/^([gkh])$/$1e/
     - xform/^([zcsr]h?)$/$1i/
   output_format:
