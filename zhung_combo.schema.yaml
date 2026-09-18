@@ -4,12 +4,13 @@
 schema:
   schema_id: zhung_combo
   name: 中原話宮保拼音
-  version: "0.6"
+  version: "4.0"
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
     宮保拼音七指禪指法
     並擊輸入老派鄭州話
+    升級至 streaming_chord 原生串流架構
 
 switches:
   - name: ascii_mode
@@ -45,94 +46,85 @@ engine:
     - simplifier
     - uniquifier
 
+# ==========================================
+# 1. 七指禪 20 鍵串流佈局
+# ==========================================
+streaming_chord:
+  initial_keys: XSCZHLFGDBKTP
+  final_keys: YIUVANREO
+  chord_duration_ms: 60
+  chord_timeout_ms: 120
+  key_map:
+    # --- 左手聲母 12 鍵 ---
+    s: S
+    w: C
+    x: Z
+    d: H
+    e: L
+    c: F
+    f: G
+    r: D
+    v: B
+    g: K
+    t: T
+    b: P
+    # --- 右手韻母 8 鍵 ---
+    space: A   # 拇指
+    j: I       # 食指
+    u: U       # 中指
+    m: V       # 食指下排 (iu/ü)
+    k: N       # 無名指
+    i: R       # 中指上排
+    l: E       # 小指
+    o: O       # 無名指上排
+    # --- 空鍵 ---
+    q: X
+    a: X
+    z: X
+    y: Y
+    h: Y
+    n: Y
+    p: Y
+  canonicalize:
+    __include: /zhung_canonicalize
+
+# ==========================================
+# 2. 字母表與拼寫代數（中州羅馬字 -> 宮保拼音碼）
+# ==========================================
 speller:
-  alphabet: "zyxwvutsrqponmlkjihgfedcba'"
-  initials: "zyxwvutsrqponmlkjihgfedcba"
-  finals: "'"
-  delimiter: " "
+  alphabet: 'SCZHLFGDBKTPIUVANREOXY[]'
+  delimiter: " '"
   algebra:
-    __patch:
-      - zhuan_pinyin:/zhuan_pinyin
-      - zhuan_pinyin:/gungbau_shuru
+    __include: /zhung_algebra
 
-chord_composer:
-  alphabet: 'swxdecfrvgtbjum kilo'
-  algebra:
-    - 'xlit|swxdecfrvgtbjum kilo|sczhlfgdbktpiuVaNReo|'
-    - 'xform/^a$/ /'
-    - xform/^zfb/v/
-    - xform/^zf/zh/
-    - xform/^cl/ch/
-    - xform/^fb/m/
-    - xform/^ld/n/
-    - xform/^shg(.+)$/$1/
-    - xform/^hg/r/
-    - xform/^g([iV])/j$1/
-    - xform/^k([iV])/q$1/
-    - xform/^h([iV])/x$1/
-    - xform/(ua?)Ro$/$1Ne/
-    - xform/iRo$/VNe/
-    - xform/aR$/ai/
-    - xform/ao$/ao/
-    - xform/Ro$/ou/
-    - xform/uR$/ui/
-    - xform/iR$/iu/
-    - xform/^([zcsr]h?)R$/$1i/
-    - xform/^R$/er/
-    - xform/Re?$/ei/
-    - xform/([ai])Ne$/$1ng/
-    - xform/^uNe$/weng/
-    - xform/uNe$/ong/
-    - xform/VNe$/iong/
-    - xform/Ne$/eng/
-    - xform/([aiuV])N$/$1n/
-    - xform/N$/en/
-    - xform/^([bpmfv])uo$/$1o/
-    - xform/iae$/iai/
-    - xform/^i(ng?)$/yi$1/
-    - xform/^i$/yi/
-    - xform/^iu/you/
-    - xform/^i/y/
-    - xform/^u([in])$/we$1/
-    - xform/^u$/wu/
-    - xform/^u/w/
-    - xform/^V/yu/
-    - xform/^([jqx])V/$1u/
-    - xform/V/v/
-    - xform/^([zcs])i$/$1yi/
-    - xform/^([zcsr]h)i([aoeu])/$1$2/
-    - xform/^([zcsr]h)i(ng?)$/$1e$2/
-    - xform/^([bpmfv])$/$1u/
-    - xform/^([dtnl])$/$1e/
-    - xform/^([gkh])$/$1e/
-    - xform/^([zcsr]h?)$/$1i/
-  output_format:
-    - "xform/^([bpm])([iu]|a|[ia]?e|o|[ae]i|i?ao|[oi]u|i?an|[ie]n|[ei]ng|ang|ong)$/$1$2'/"
-    - "xform/^([fvw])([iu]|a|o|[ae]i|ao|ou|an|en|eng|ang|ong)$/$1$2'/"
-    - "xform/^([dt])([iu]|i?a|[ia]?e|[iu]o|[aeu]i|i?ao|[oi]u|[iu]?an|[ue]n|[ei]ng|ang|ong)$/$1$2'/"
-    - "xform/^([nl])([iuv]|i?a|[iva]?e|[iuv]?o|[aeu]i|i?ao|[oi]u|[iuv]?an|[iuve]n|[ei]ng|i?ang|i?ong)$/$1$2'/"
-    - "xform/^([gkh])(u|u?a|u?a?e|uo|u?ai|[ue]i|u?ao|u?ou|u?an|[ue]n|eng|u?ang|ong)$/$1$2'/"
-    - "xform/^([zcs]h?|r)([iu]|u?a|a?e|uo|u?ai|[ue]i|u?ao|u?ou|u?an|[ue]n|eng|u?ang|ong)$/$1$2'/"
-    - "xform/^([jqxy])([iu]|i?ai?|[iu]?e|[iu]?o|[iu]?ao|u?ou|iu|[iu]?an|[iu]n|ing|i?ang|i?ong)$/$1$2'/"
-    - "xform/^([zcs])(yi|v|[iv]e|[iv]o|[iv]ao|[iv]ou|iu|[iuv]an|[iuv]n|ing|iang|iong)$/$1$2'/"
-    - "xform/^([aeo]|[ae]i|ae|ao|ou|[ae]ng?|er)$/$1'/"
-    - "erase/^([A-Za-z]+)$/"
-  prompt_format:
-    - "xform/^(.*)$/[$1]/"
-  bindings:
-    # 回車鍵上屏按鍵序列
-    Return: commit_raw_input
-
+# ==========================================
+# 3. 翻譯器與回顯
+# ==========================================
 translator:
   dictionary: zhung
   prism: zhung_combo
+  enable_completion: false
+  canonicalize:
+    __include: /zhung_canonicalize
   preedit_format:
-    __patch: zhuan_pinyin:/xanshy_shengdiau
+    __include: /zhung_preedit
 
 editor:
   bindings:
-    # 退格鍵刪除一個拼音音節
     BackSpace: back_syllable
+    Return: confirm
+
+ascii_composer:
+  bindings:
+    "Shift+KP_Enter": commit_raw_input
+    "Shift+Return": commit_raw_input
+    "Shift+space": commit_raw_input_with_space
+  inline_keypad: true
+  inline_uppercase: true
+
+recognizer:
+  patterns:
+    punct: "^/([0-9]0?|[A-Za-z]+)$"
 
 punctuator:
   import_preset: default
@@ -140,12 +132,110 @@ punctuator:
 key_binder:
   import_preset: default
   bindings:
-    # 不用 , . 翻頁
     - { when: paging, accept: comma, send: comma }
     - { when: has_menu, accept: period, send: period }
 
-recognizer:
-  import_preset: default
+# ==========================================
+# 規則庫定義
+# ==========================================
+
+zhung_canonicalize:
+  - xform/[XY]//
+  - reorder SCZHLFGDBKTPIUVANREO
+  - xform/^[A-Z]+$/[$0]/
+
+zhung_algebra:
+  # 1. 聲調剝離（本方案爲無調並擊）
+  - derive/^([a-z]+)[1-4]$/$1/
+  - 'erase/^.*[0-9]$/'
+
+  # 2. 依據 zhuan_pinyin 規律補全詞典中省略的介音
+  # 團音後接 a, e, o 省略的 i
+  - xform/^([jqx])([aeo])/$1i$2/
+  # 團音後接撮口韻省略的 iu
+  - xform/^([jqx])u/$1iu/
+
+  # 3. 零聲母歸併
+  - xform/^wu/u/
+  - xform/^w([aeo])/u$1/
+  - xform/^yi/i/
+  - xform/^y([aeou])/i$1/
+
+  # 4. 韻母轉寫
+  # 兒化與舌尖元音
+  - xform/^el$/R/              # 兒 el = R
+  - xform/^([zcs]h?|r)y$/$1R/  # 舌尖元音 y = R (sy->SR, shy->ZFR)
+
+  # 複韻母與鼻音
+  - xform/iau$/IAO/
+  - xform/au$/AO/
+  - xform/iou$/IR/
+  - xform/ou$/RO/
+  - xform/iai$/IAR/           # 界 iai = IAR
+  - xform/ai$/AR/
+  - xform/ui$/UR/
+  - xform/ei$/RE/
+  - derive/uang$/UARO/
+  - xform/uang$/UANE/
+  - xform/iang$/IANE/
+  - xform/ang$/ANE/
+  - derive/iung$/IRO/
+  - xform/iung$/VNE/
+  - derive/ung$/URO/
+  - xform/ung$/UNE/
+  - xform/ing$/INE/
+  - xform/eng$/NE/
+  - xform/iuan$/VAN/
+  - xform/uan$/UAN/
+  - xform/ian$/IAN/
+  - xform/an$/AN/
+  - xform/iun$/VN/
+  - xform/un$/UN/
+  - xform/in$/IN/
+  - xform/en$/N/
+
+  # 撮口介音 (iu = Ü)
+  - derive/iuo$/IO/           # 藥 iuo = IO
+  - xform/iuo$/VO/
+  - xform/iue$/VE/            # 月 iue = ÜE
+
+  - xform/ue$/UE/             # 國 ue = UE
+  - xform/ie$/IE/
+
+  # 基礎單元音
+  - xform/^a$/SHGA/           # 區別空格
+  - xform/a$/A/
+  - xform/eo$/E/              # 各 eo = E
+  - xform/e$/AE/              # 革 e = AE
+  - xform/o$/O/
+  - xform/iu/V/               # 雨/居 iu = Ü
+  - xform/u/U/
+  - xform/i/I/
+
+  # 5. 聲母轉寫
+  - xform/^v/ZFB/             # 未 v = ZFB
+  - xform/^gh/SHG/            # 鵝 gh = SHG
+  - xform/^zh/ZF/
+  - xform/^ch/CL/
+  - xform/^sh/SH/
+  - xform/^rh/HG/             # 日 rh = HG
+  - xform/^m/FB/
+  - xform/^n/LD/
+  - xlit/bpfdtlgkhjqxzcs/BPFDTLGKHGKHZCS/
+
+  # 6. 單輔音成音節補足
+  - derive/^([BPF]|FB)U$/$1/
+  - derive/^([DTLGKH]|LD)E$/$1/
+  - derive/^([ZCS]|ZF|CL|SH|HG)R$/$1/  # 舌尖元音通常省略
+
+  # 7. 定界閉包
+  - xform/^.+$/[$0]/
+
+zhung_preedit:
+  - xform/[XY]//
+  - reorder SCZHLFGDBKTPIUVANREO
+  - xform/\[?([A-Z]+)\]?/$1/
+  - xlit/V/Ü/
 
 __patch:
   # 使用八股文語言模型
